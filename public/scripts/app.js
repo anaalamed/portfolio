@@ -51,6 +51,7 @@ const Portfolio = (function () {
       var y_scroll_pos = window.pageYOffset;
       var scroll_pos_test = 2700; // set to whatever you want it to be
       var words = makeWords();
+      // console.log(words);
       if (y_scroll_pos > scroll_pos_test && count <= 1) {
         makeWordCloud(words);
         count++;
@@ -66,7 +67,7 @@ const Portfolio = (function () {
     Typed.new("#writing-text", {
       strings: [
         "am a Full-Stack Web Developer.",
-        "Electrical and Electronic Engineer",
+        "am a Electrical and Electronic Engineer",
         "love everything about code.",
       ],
       // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
@@ -87,7 +88,7 @@ const Portfolio = (function () {
 
   return {
     displayWordCloud: displayWordCloud,
-    typeAnimation: typeAnimation,
+    typeAnimation: typeAnimation
   };
 })();
 

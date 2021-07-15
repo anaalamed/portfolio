@@ -1,20 +1,21 @@
 var express = require("express");
-// var app = express();
-// var path = require("path");
+var path = require("path");
 
-// app.use(express.static(path.join(__dirname)));
-// app.use("/styles", express.static(__dirname));
-// app.use("/images", express.static(__dirname + "/images"));
-// app.use("/scripts", express.static(__dirname + "/scripts"));
+var app = express();
 
-// // viewed at based directory http://localhost:8080/
-// app.get("/", function (req, res) {
-//   res.sendFile(path.join(__dirname + "home.html"));
-// });
+// import {} from './assets/scripts'
 
-// // add other routes below
-// // app.get("/about", function (req, res) {
-// //   res.sendFile(path.join(__dirname + "views/about.html"));
-// // });
 
-// app.listen(process.env.PORT || 8080);
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+
+
+const port = process.env.PORT || 7000; 
+app.listen(port,() =>  {
+    console.log(`Running on: http://localhost:${port}`);
+});

@@ -182,24 +182,24 @@ h6 {
   font-weight: 500;
 }
 
-/*** work ***/
-#work {
+/*** projects ***/
+#projects {
   padding: 6em 4em 3em;
   background-color: #fff;
 }
 
-#work h2 {
+#projects h2 {
   color: #ff6945;
   margin-bottom: 0.7em;
 }
 
-#work .tag-line {
+#projects .tag-line {
   color: #767779;
   font-size: 1.4em;
   margin-bottom: 4em;
 }
 
-#work .work-row {
+#projects .projects-row {
   margin-bottom: 5.5em;
 }
 
