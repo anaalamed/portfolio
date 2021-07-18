@@ -1,97 +1,115 @@
 const projects = [
     {
-        "id": 1,
         "name": "Massager Portfolio", 
-        "description": "The website I created for my brother",
+        "description": "The website I created for my brother Gatsby Template",
         "link": "https://victorportfolio.gatsbyjs.io/",
         "image": "images/victor.png",
-        "react": true
+        "tools": ["react"],
     },
     {
-        "id": 2,
         "name": "To Do App", 
         "description": "ToDo app created with REACT.....",
         "link": "https://anaalamed-todo.herokuapp.com/",
-        "image": "images/todo.png"
+        "image": "images/todo.png",
+        "tools": ["react", 'node-js'],
     },
     {
-        "id": 3,
-        "name": "Mini Forum", 
-        "description": "Mini Forum created with React",
-        "link": "",
-        "image": "images/.png"
-    },
-    {
-        "id": 4,
         "name": "Space Invaders", 
         "description": "...",
         "link": "https://ixcyl.csb.app/",
-        "image": "images/space_invaders.png"
+        "image": "images/space_invaders.png",
+        "tools": ["html", 'css', 'js'],
     },
     {
-        "id": 5,
         "name": "Memory Game", 
         "description": "...",
         "link": "https://bsd26.csb.app/",
-        "image": "images/cards.png"
+        "image": "images/cards.png",
+        "tools": ["html", 'css', 'js'],
     },
     {
-        "id": 6,
         "name": "TVmaze Clone", 
         "description": "...",
         "link": "https://anaalamed-tvmaze-clone.herokuapp.com/",
-        "image": "images/tvmaze.png"
+        "image": "images/tvmaze.png",
+        "tools": ["html", 'css', 'sass', 'js'],
     },
     {
-        "id": 7,
         "name": "My Digital CV", 
         "description": "...",
         "link": "https://anaalamed.github.io/",
-        "image": "images/projectCV.png"
+        "image": "images/projectCV.png",
+        "tools": ["html", 'css', 'sass', 'js'],
     },
     {
-        "id": 8,
+        "name": "Mini Forum", 
+        "description": "Mini Forum created with React",
+        "link": "",
+        "image": "images/.png",
+        "tools": ['react'],
+    },
+    {
         "name": "Tic Tac Toe", 
         "description": "...",
         "link": "",
-        "image": ""
+        "image": "",
+        "tools": ['react'],
     },
 ]
 
+var num = 1;
 function render_project(project = {}) {
-    if (project.id %2 === 0) {
-        return `
-        <div class="row projects-row">
-        <!-- even -->
+    let code;
+    if (num %2 === 0) {
+        code =  `
+     <div class="row projects-row">
         <div class="small-12 medium-6 medium-push-6 columns">
             <img src=${project.image} alt="">
         </div>
         <div class="small-12 medium-5 medium-pull-7 columns">
             <div class="details details-ftm">
-            <h3>${project.name}</h3>
+                <h3>${project.name}</h3>
+                <div>
+                    ${project.tools?.includes('react') ? `<i class="fab fa-react fa-2x"></i>` : ``}
+                    ${project.tools?.includes('html') ? `<i class="fab fa-html5 fa-2x"></i>` : ``}
+                    ${project.tools?.includes('css') ? `<i class="fab fa-css3 fa-2x"></i>` : ``}
+                    ${project.tools?.includes('sass') ? `<i class="fab fa-sass fa-2x"></i>` : ``}
+                    ${project.tools?.includes('js') ? `<i class="fab fa-js fa-2x"></i>` : ``}
+                    ${project.tools?.includes('node-js') ? `<i class="fab fa-node-js fa-2x"></i>` : ``}                
+                </div>
                 <p>${project.description}</p>
+
                 <a class="my-button" target="_blank" href=${project.link}>Visit
                     Website</a>
-            </div>
+                </div>
         </div>
     </div>
-    }`
-}  else return `
+    `
+}  else code = `
     <div class="row projects-row">
-        <!-- odd -->
         <div class="small-12 medium-6 columns">
             <img src=${project.image} alt="">
         </div>
         <div class="small-12 medium-5 medium-offset-1 columns">
             <div class="details details-ftm">
                 <h3>${project.name}</h3>
+                <div>
+                ${project.tools?.includes('react') ? `<i class="fab fa-react fa-2x"></i>` : ``}
+                ${project.tools?.includes('html') ? `<i class="fab fa-html5 fa-2x"></i>` : ``}
+                ${project.tools?.includes('css') ? `<i class="fab fa-css3 fa-2x"></i>` : ``}
+                ${project.tools?.includes('sass') ? `<i class="fab fa-sass fa-2x"></i>` : ``}
+                ${project.tools?.includes('js') ? `<i class="fab fa-js fa-2x"></i>` : ``}
+                ${project.tools?.includes('node-js') ? `<i class="fab fa-node-js fa-2x"></i>` : ``}                
+            </div>
                 <p>${project.description}</p>
                 <a class="my-button" target="_blank" href=${project.link}>Visit
                     Website</a>
             </div>
         </div>
     </div>
-    `;
+    `
+    num++;
+    return code;
 }
 
 function render_projects(project = {}) {

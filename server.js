@@ -9,6 +9,7 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
+
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
