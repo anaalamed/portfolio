@@ -1,10 +1,10 @@
 const projects = [
     {
-        "name": "Massager Portfolio", 
-        "description": "The website I created for my brother Gatsby Template",
-        "link": "https://victorportfolio.gatsbyjs.io/",
-        "image": "images/victor.png",
-        "tools": ["react"],
+        "name": "Mini Forum", 
+        "description": "Mini Forum created with React",
+        "link": "https://mini-forum1.herokuapp.com/",
+        "image": "images/forum.png",
+        "tools": ['react', 'node-js'],
     },
     {
         "name": "To Do App", 
@@ -12,6 +12,13 @@ const projects = [
         "link": "https://anaalamed-todo.herokuapp.com/",
         "image": "images/todo.png",
         "tools": ["react", 'node-js'],
+    },
+    {
+        "name": "Massager Portfolio", 
+        "description": "The website I created for my brother Gatsby Template",
+        "link": "https://victorportfolio.gatsbyjs.io/",
+        "image": "images/victor.png",
+        "tools": ["react"],
     },
     {
         "name": "Space Invaders", 
@@ -38,16 +45,10 @@ const projects = [
         "name": "My Digital CV", 
         "description": "...",
         "link": "https://anaalamed.github.io/",
-        "image": "images/projectCV.png",
+        "image": "images/cv.png",
         "tools": ["html", 'css', 'sass', 'js'],
     },
-    {
-        "name": "Mini Forum", 
-        "description": "Mini Forum created with React",
-        "link": "",
-        "image": "images/.png",
-        "tools": ['react'],
-    },
+
     {
         "name": "Tic Tac Toe", 
         "description": "...",
@@ -113,7 +114,7 @@ function render_project(project = {}) {
 }
 
 function render_projects(project = {}) {
-    document.querySelector('#projects').innerHTML = projects.map(render_project).join("") 
+    document.querySelector('#myProjects').innerHTML = projects.map(render_project).join(""); 
 }
 render_projects(projects);
 
