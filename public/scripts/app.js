@@ -66,14 +66,14 @@ const Portfolio = (function () {
   function typeAnimation() {
     Typed.new("#writing-text", {
       strings: [
-        "am a Full-Stack Web Developer.",
-        "am a Electrical and Electronic Engineer",
+        "a Full-Stack Web Developer.",
+        "an Electrical and Electronics Engineer",
         "love everything about code.",
       ],
       // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
       stringsElement: null,
       // typing speed
-      typeSpeed: 1,
+      typeSpeed: 5,
       contentType: "text",
       callback: function () {
         $("#writing-text").css({

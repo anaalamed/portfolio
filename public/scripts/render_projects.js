@@ -1,61 +1,62 @@
 const projects = [
     {
         "name": "Mini Forum", 
-        "description": "Mini Forum created with React",
+        "description": 'Social media website, where you can create your own profile, share posts, comment to posts, "like" posts and view other users and their profile and their posts.',
         "link": "https://mini-forum1.herokuapp.com/",
         "image": "images/forum.png",
         "tools": ['react', 'node-js'],
     },
     {
-        "name": "To Do App", 
-        "description": "ToDo app created with REACT.....",
+        "name": "To Do", 
+        "description": `Website where you can create your own account and a "to-do" list. You can mark certain things off your list as "done", which will then be shown on a second list as things you've accomplished. Two more features of this website enables you to delete things you wrote or update them.`,
         "link": "https://anaalamed-todo.herokuapp.com/",
         "image": "images/todo.png",
         "tools": ["react", 'node-js'],
     },
     {
-        "name": "Massager Portfolio", 
-        "description": "The website I created for my brother Gatsby Template",
+        "name": "Advertisement", 
+        "description": `Website created for a massage therapist for advertisement purposes and in order to pursue new clientele. On the website one can see a list of the various services given at a massage session and see pictures of the treatment process, as well as the massage therapist's experience and contact info.
+        The website was created using Gatsby Template.`,
         "link": "https://victorportfolio.gatsbyjs.io/",
         "image": "images/victor.png",
         "tools": ["react"],
     },
     {
-        "name": "Space Invaders", 
-        "description": "...",
+        "name": "Game - Space Invaders", 
+        "description": `A game where the player plays as a tank. In the game the player moves the tank to the sides and shoots at the monsters above him, while trying to avoid the monsters' shots aimed at the tank's direction. The player has three "lives", and can also hide behind defences of long beams, that gets weaker each time a monster shoots them. The game ends once the player "kills" all the monsters or when the player lost all his "lives".`,
         "link": "https://ixcyl.csb.app/",
         "image": "images/space_invaders.png",
         "tools": ["html", 'css', 'js'],
     },
     {
         "name": "Memory Game", 
-        "description": "...",
+        "description": "A memory game. The game starts with showing the player all the cards for a few short seconds. Then the cards are flipped upside down. The player then needs to find matching pairs of the same picture by memory.",
         "link": "https://bsd26.csb.app/",
         "image": "images/cards.png",
         "tools": ["html", 'css', 'js'],
     },
     {
-        "name": "TVmaze Clone", 
-        "description": "...",
+        "name": "TVmaze Shows Clone", 
+        "description": `This website is a replica of another existing website. The replica has some of the same features as the original website, such as the ability to search a certain movie or t.v. series the watcher is looking for. The information was taken from the original website's API.`,
         "link": "https://anaalamed-tvmaze-clone.herokuapp.com/",
         "image": "images/tvmaze.png",
         "tools": ["html", 'css', 'sass', 'js'],
     },
     {
         "name": "My Digital CV", 
-        "description": "...",
+        "description": "",
         "link": "https://anaalamed.github.io/",
         "image": "images/cv.png",
         "tools": ["html", 'css', 'sass', 'js'],
     },
 
-    {
-        "name": "Tic Tac Toe", 
-        "description": "...",
-        "link": "",
-        "image": "",
-        "tools": ['react'],
-    },
+    // {
+    //     "name": "Tic Tac Toe", 
+    //     "description": "...",
+    //     "link": "",
+    //     "image": "",
+    //     "tools": ['react'],
+    // },
 ]
 
 var num = 1;
