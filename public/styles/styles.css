@@ -227,6 +227,12 @@ path:hover {
   text-transform: uppercase;
 }
 
+.details h3:hover {
+  color: #ff7654;
+  transition: 1s;
+  font-size: 2rem;
+}
+
 .details .platform {
   font-size: 0.8em;
   text-transform: uppercase;

@@ -2,7 +2,7 @@ const projects = [
     {
         "name": "Mini Forum", 
         "description": 'Social media website, where you can create your own profile, share posts, comment to posts, "like" posts and view other users and their profile and their posts.',
-        "link": "https://mini-forum1.herokuapp.com/",
+        "link": "https://anaalamed-forum-ui.herokuapp.com",
         "image": "images/forum.png",
         "tools": ['react', 'node-js'],
     },
