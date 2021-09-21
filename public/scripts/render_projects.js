@@ -1,5 +1,15 @@
 const projects = [
     {
+        "name": "Island Game", 
+        "description": `A simple game in which there are a few islands divided by numbers, and the player is a pirate. The game begins by clicking a button called "roll dice". Then the dice shows a random number, and the player will automatically move to the island of that same number and receives a message whether the player won or lost the game. 
+        A player can sign up quickly and play. After signing up, the player's wins and losses record will be saved in the system.
+        The game is adapted to mobile phones.`,
+        "link": "https://anaalamed-island-game.herokuapp.com",
+        "image": "images/islandGame.png",
+        "tools": ['react', 'node-js'],
+
+    },
+    {
         "name": "Mini Forum", 
         "description": 'Social media website, where you can create your own profile, share posts, comment to posts, "like" posts and view other users and their profile and their posts.',
         "link": "https://anaalamed-forum-ui.herokuapp.com",
@@ -20,6 +30,13 @@ const projects = [
         "link": "https://victorportfolio.gatsbyjs.io/",
         "image": "images/victor.png",
         "tools": ["react"],
+    },
+    {
+        "name": "News", 
+        "description": `The website receives news from the api of ABC news website and presents them. Also, there is a "word cloud" that shows which words are being used the most.`,
+        "link": "https://anaalamed-abc-news.herokuapp.com",
+        "image": "images/news.png",
+        "tools": ["react", 'node-js']
     },
     {
         "name": "Game - Space Invaders", 
