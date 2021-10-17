@@ -32,7 +32,7 @@ const Projects = ({ repos }) => {
             <Title>Projects</Title>
             <Collection>
                 {currentRepos?.map(repo =>
-                    (<Project repo={repo} key={repo.id} ></Project>)
+                    (<Project repo={repo}  ></Project>) // key={repo.id} ts error
                 )}
             </Collection>
 

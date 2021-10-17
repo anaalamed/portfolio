@@ -94,6 +94,7 @@ const Content = styled.div`
 
       p {
         font-size: 1rem;
+        text-align: center;
       }
     }
 `;

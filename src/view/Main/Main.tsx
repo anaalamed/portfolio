@@ -5,6 +5,7 @@ import About from './About/About';
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
 
+
 const Main = () => {
     const [repos, setRepos] = useState([]);
 

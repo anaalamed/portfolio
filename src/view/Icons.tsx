@@ -44,6 +44,5 @@ const Box = styled.div`
         @media only screen and (max-width: 812px) {
           font-size: 1.8rem;
         }
-
     }
 `;
