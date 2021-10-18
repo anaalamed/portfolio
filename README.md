@@ -1,5 +1,5 @@
 # Portfolio
-Deploy - https://ana-levit-portfolio.web.app
+Deploy - https://ana-levit-portfolio-ts.web.app
 
 This is portfolio project challenge from CoderZ group. In this project I have built my portfolio. There are 4 sections: hero, about, projects and contact.    
 I've developed it with React. It uses GitHub API to get my repos. 
