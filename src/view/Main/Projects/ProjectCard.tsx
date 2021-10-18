@@ -19,7 +19,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
 
   return (
     <Box >
-      <h1>{repo.name}</h1>
+      <h1>{(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(/[- _]/g, ' ')}</h1>
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
       <p>{repo.description}</p>

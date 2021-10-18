@@ -43,7 +43,7 @@ const Box = styled.main`
   padding: 1rem 6rem;
 
   @media only screen and (max-width: 812px) {
-    padding: 1rem ;
+    padding: 1rem;
   }
 `;
 

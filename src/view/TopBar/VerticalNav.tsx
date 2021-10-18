@@ -36,7 +36,7 @@ const VerticalNav: React.FC<Props> = ({ setTheme, open, setOpen }) => {
         <li><Link offset='140' href='#about' onClick={() => setOpen(false)}>About</Link></li>
         <li><Link offset='140' href='#projects' onClick={() => setOpen(false)}>Projects</Link></li>
         <li><Link href='#contact' onClick={() => setOpen(false)}>Contact</Link></li>
-        <li><Toggle setTheme={setTheme}></Toggle></li>
+        <li className="toggle"><Toggle setTheme={setTheme}></Toggle></li>
       </NavVertical>
     </RightNav>
   );
@@ -58,6 +58,7 @@ const MenuBtn = styled.button`
   background: transparent;
   border: none;
   font-size: 2rem;
+  margin-right: 1rem;
 
   :hover {
     color: ${props => props.theme.body}
@@ -76,9 +77,15 @@ const NavVertical = styled.ul`
   top: 6.5rem;
   right: 0;
   border: 1px solid black;
+  width: 100%;
+  text-align: center;
 
   li {
     padding: 1rem;
+  }
+
+  .toggle {
+    margin-right: 2rem;
   }
 `;
 
@@ -100,13 +107,13 @@ const Link = styled(AnchorLink)`
 
 const ButtonX = styled.button`
   display: block;
-  /* background: ${props => props.theme.button}; */
   background: transparent;
   display: none;
-  float: right;
   color: red;
   border: none;
   font-weight: bold;
+  position: absolute;
+  right: 2rem;
 
   :hover {
     font-size: 1.5rem;

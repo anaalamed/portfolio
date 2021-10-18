@@ -31,6 +31,7 @@ const Box = styled.section`
   display: flex;
   justify-content: space-between;
   padding: 0 3rem ;
+  width: 100%;
 
   @media only screen and (max-width: 1200px) {
       padding: 1rem 0 ;
@@ -57,7 +58,7 @@ const Image = styled.div`
   top: -15rem;
 
   @media only screen and (max-width: 812px) {
-    top: -13rem;
+    top: -10rem;
   }
 
   img {
@@ -68,8 +69,7 @@ const Image = styled.div`
     }
       
     @media only screen and (max-width: 812px) {
-      width: 25rem;
-      padding: 0;
+      width: 24rem;
     }
   }
 `;
@@ -81,7 +81,7 @@ const Details = styled.div`
   top: 15rem;
   font-size: 3rem;
   z-index: 10;
-  width: max-content;
+  max-width: max-content;
 
   h1, p {
     margin: 1.5rem;
@@ -94,11 +94,16 @@ const Details = styled.div`
   }
 
   @media only screen and (max-width: 812px) {
-    left: 3rem;
+    left: 2rem;
     top: 3rem;
-    font-size: 1.5rem;
-    width: max-content;
+    font-size: 1.3rem;
+    /* width: max-content; */
     margin-right: 0;
+    max-width: 20rem;
+
+    h1, p {
+    margin: 0.5rem;
+  }
   }
 `;
 

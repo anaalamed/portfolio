@@ -42,6 +42,7 @@ const Header = styled.header`
   justify-content: space-between;
   z-index: 100;
   padding: 0.4rem 2rem;
+  width: 100%;
 
   @media only screen and (max-width: 812px) {
      padding: 0.3rem;
@@ -67,6 +68,10 @@ const Nav = styled.ul`
   @media only screen and (max-width: 812px) {
     display: none;
   }  
+
+  .toggle {
+    margin-top: 0.65rem;
+  }
 `;
 
 
