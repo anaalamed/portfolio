@@ -1,9 +1,14 @@
 import React from "react";
 
-import "react-toggle/style.css"
-import Toggle from 'react-toggle'
+import "react-toggle/style.css";
+import Toggle from 'react-toggle';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
-const Toogle = ({ setTheme }) => {
+interface Props {
+    setTheme(): any
+}
+
+const Toogle: React.FC<Props> = ({ setTheme }) => {
 
     const onCheck = (e) => {
         setTheme();
@@ -14,7 +19,9 @@ const Toogle = ({ setTheme }) => {
             {/* <label> */}
             <Toggle
                 name='theme'
-                onChange={onCheck} />
+                onChange={onCheck}
+                icons={{ checked: < BsFillMoonFill />, unchecked: < BsFillSunFill /> }}
+            />
             {/* </label> */}
         </>
     )

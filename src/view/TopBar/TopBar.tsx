@@ -5,7 +5,11 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Toggle from './Toogle';
 import VerticalNav from './VerticalNav';
 
-const TopBar = ({ setTheme }) => {
+interface Props {
+  setTheme(): any
+}
+
+const TopBar: React.FC<Props> = ({ setTheme }) => {
   const [open, setOpen] = useState(false);
 
   return (

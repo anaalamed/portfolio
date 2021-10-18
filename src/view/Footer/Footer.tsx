@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Title } from '../../styles/global';
 import Icons from '../Icons';
 
-const Contact = () => {
+const Contact: React.FC = () => {
 
     return (
         <Box id="contact">

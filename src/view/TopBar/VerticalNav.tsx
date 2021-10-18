@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { IoMdMenu } from "react-icons/io";
 
 import Toggle from './Toogle';
 
-const VerticalNav = ({ setTheme, open, setOpen }) => {
+interface Props {
+  setTheme(): any,
+  open: boolean,
+  setOpen(): any
+}
+
+const VerticalNav: React.FC<Props> = ({ setTheme, open, setOpen }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (open && ref.current && !ref.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", checkIfClickedOutside)
+
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [open])
 
   return (
-    <RightNav >
+    <RightNav ref={ref} >
       <MenuBtn onClick={() => setOpen(!open)} ><IoMdMenu /></MenuBtn>
       <NavVertical display={open} >
         <ButtonX onClick={() => setOpen(false)}>X</ButtonX>
@@ -25,7 +46,7 @@ export default VerticalNav;
 
 const RightNav = styled.div`
   display: none;
-  
+
   @media only screen and (max-width: 812px) {
     display: block;
   }
@@ -57,7 +78,7 @@ const NavVertical = styled.ul`
   border: 1px solid black;
 
   li {
-      padding: 1rem;
+    padding: 1rem;
   }
 `;
 

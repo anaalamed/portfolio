@@ -46,7 +46,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .react-toggle-track-check, .react-toggle-track-x  {
-    display: none;
+    /* display: none; */
+    /* font-size: 1rem; */
+    margin-bottom: 0.6rem;
   }
 
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {

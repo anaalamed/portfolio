@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ThemeProvider } from "styled-components";
 
@@ -11,15 +10,15 @@ import Hero from './view/Hero/Hero';
 
 import { GlobalStyles } from "./styles/global";
 
-function App() {
+function App(): React.ReactNode {
   const [theme, toggleTheme] = useDarkMode();
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-          <TopBar setTheme={toggleTheme}></TopBar>
-          <Hero ></Hero>
-          <Main ></Main>
-          <Contact ></Contact>
+      <TopBar setTheme={toggleTheme}></TopBar>
+      <Hero ></Hero>
+      <Main ></Main>
+      <Contact ></Contact>
 
       <GlobalStyles></GlobalStyles>
     </ThemeProvider>

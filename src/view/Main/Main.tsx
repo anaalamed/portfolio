@@ -5,8 +5,7 @@ import About from './About/About';
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
 
-
-const Main = () => {
+const Main: React.FC = () => {
     const [repos, setRepos] = useState([]);
 
     const fetchRepos = async () => {

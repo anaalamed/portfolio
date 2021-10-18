@@ -5,7 +5,7 @@ export const useDarkMode = () => {
 
   const toggleTheme = () => {
     if (theme === 'light') {
-      window.localStorage.setItem('theme', 'dark') // for next vissit to app
+      window.localStorage.setItem('theme', 'dark') // for next visit to app
       setTheme('dark')
     } else {
       window.localStorage.setItem('theme', 'light')

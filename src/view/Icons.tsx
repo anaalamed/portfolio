@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import { GrLinkedinOption, GrGithub } from 'react-icons/gr';
 import { IoDocumentAttachOutline } from 'react-icons/io5';
 
-const Icons = () => {
+const Icons: React.FC = () => {
   const tooltips = [{ name: "linkedin", note: "My LinkedIn profile" }, { name: "github", note: "My GitHub profile" }, { name: "cv", note: "My CV" }]
 
   return (

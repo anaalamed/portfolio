@@ -4,7 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import Icons from '../Icons';
 
-const Hero = () => {
+const Hero: React.FC = () => {
 
   return (
     <Box id="front">

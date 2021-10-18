@@ -3,8 +3,11 @@ import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from '../../../styles/global';
 
+interface Avatar {
+  avatar: string
+}
 
-const About = ({ avatar }) => {
+const About: React.FC<Avatar> = ({ avatar }) => {
 
   const skillsFrontend = [
     { logo: "HTML5", color: "E34F26" },
@@ -40,7 +43,7 @@ const About = ({ avatar }) => {
           <Title>About</Title>
 
           <Content>
-            <Image><img src={avatar} alt='' /></Image>
+            <Image><img src={avatar} alt='avatar' /></Image>
 
             <Details>
               <p>I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
@@ -80,6 +83,7 @@ const Content = styled.div`
   p {
     font-size: 1.5rem;
     text-align: left;
+    /* text-align: center; */
   }
 
   @media only screen and (max-width: 1012px) {

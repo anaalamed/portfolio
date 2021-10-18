@@ -5,7 +5,17 @@ import ReactTooltip from 'react-tooltip';
 import { GrGithub } from 'react-icons/gr';
 import { CgWebsite } from 'react-icons/cg';
 
-const Project = ({ repo }) => {
+interface Repo {
+  name: string,
+  image_url: string,
+  description: string,
+  html_url: string,
+  updated_at: string,
+  homepage: string
+}
+
+
+const Project: React.FC<Repo> = (repo: Repo) => {
 
   return (
     <Box >
@@ -13,18 +23,16 @@ const Project = ({ repo }) => {
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
       <p>{repo.description}</p>
-      <p>last updated: {dayjs(repo.updated_at).format('DD-MM-YY')}</p>
+      <p>last updated: {dayjs(repo.updated_at).format('DD/MM/YY')}</p>
       <Buttons>
-        <Button ><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub data-tip data-for="github" /></a></Button>
+        <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
         {(repo.homepage) ? (
-          <Button ><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite data-tip data-for="website" /></a></Button>
+          <Button data-tip data-for="website"><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
         ) : null}
       </Buttons>
 
       <ReactTooltip id="github" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>GitHub</ReactTooltip>
       <ReactTooltip id="website" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>Website</ReactTooltip>
-
-
 
     </Box>
   );
