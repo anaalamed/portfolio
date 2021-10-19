@@ -16,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
+    /* align-items: baseline; */
     min-height:100%;
     margin: 0;
     padding: 0;

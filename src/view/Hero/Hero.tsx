@@ -77,7 +77,7 @@ const Image = styled.div`
     }
       
     @media only screen and (max-width: 812px) {
-      width: 24rem;
+      width: 23rem;
     }
   }
 `;

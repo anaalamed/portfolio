@@ -5,7 +5,7 @@ import Toggle from 'react-toggle';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
 interface Props {
-    setTheme(): any
+    setTheme(): void
 }
 
 const Toogle: React.FC<Props> = ({ setTheme }) => {
