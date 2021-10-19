@@ -6,7 +6,6 @@ import Project from './ProjectCard';
 
 
 const InfiniteScrollRender = ({ repos }) => {
-
     const [currentRepos, setCurrentRepos] = useState(repos.slice(0, 5));
     const [hasMore, setHasMore] = useState(true);
 
@@ -18,6 +17,7 @@ const InfiniteScrollRender = ({ repos }) => {
         setTimeout(() => {
             setCurrentRepos(currentRepos.concat(repos.slice(0, 5)))
             repos.splice(0, 5);
+            console.log(repos);
         }, 1500);
     };
 

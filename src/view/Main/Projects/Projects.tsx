@@ -13,7 +13,7 @@ interface Repos {
 
 const Projects: React.FC<Repos> = ({ repos }) => {
     var windowSize = useWindowSize();
-    console.log(windowSize);
+    var arrRepos = [...repos]; // clone without refference for infinite scroll
 
     // sort projects
     if (repos.length !== 0) {
@@ -29,7 +29,7 @@ const Projects: React.FC<Repos> = ({ repos }) => {
             <Title>Projects</Title>
 
             {(windowSize[0] <= 812) ?
-                (<InfiniteScrollRender repos={repos}></InfiniteScrollRender>) :
+                (<InfiniteScrollRender repos={arrRepos}></InfiniteScrollRender>) :
                 (<PaginatonRender repos={repos}></PaginatonRender>)
             }
         </Box>
@@ -39,7 +39,6 @@ export default Projects;
 
 
 const Box = styled.section`
-  /* margin-bottom: 3rem; */
   display: flex;
   flex-direction: column;
   align-items: center;

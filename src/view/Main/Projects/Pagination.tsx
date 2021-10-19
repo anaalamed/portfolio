@@ -12,6 +12,7 @@ interface Repos {
 }
 
 const PaginatonRender: React.FC<Repos> = ({ repos }) => {
+    console.log(repos);
     const [currentPage, setCurrentPage] = useState(1);
     const [reposPerPage] = useState(6);
 
