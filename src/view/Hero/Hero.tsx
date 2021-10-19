@@ -32,12 +32,20 @@ const Box = styled.section`
   justify-content: space-between;
   padding: 0 3rem ;
   width: 100%;
+  height: 100vh;
+  min-height: 55rem;
 
   @media only screen and (max-width: 1200px) {
       padding: 1rem 0 ;
-      margin-top: 6rem;
+      padding-top: 6rem;
       flex-direction: column;
       align-items: center;
+      /* justify-content: flex-start; */
+    }
+
+    @media only screen and (max-width: 812px) {
+      height: auto;
+      min-height: 0;
     }
 `;
 

@@ -22,7 +22,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
       <h1>{(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(/[- _]/g, ' ')}</h1>
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
-      <p>{repo.description}</p>
+      <p className="description">{repo.description}</p>
       <p>last updated: {dayjs(repo.updated_at).format('DD/MM/YY')}</p>
       <Buttons>
         <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
@@ -46,15 +46,21 @@ const Box = styled.div`
   margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-  min-height: 25rem;
+  min-height: 23rem;
 
   p {
     text-align: center;
     font-size: 1rem;
+  }
+
+  .description {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
 
   @media only screen and (max-width: 812px) {
@@ -68,7 +74,6 @@ const Image = styled.div`
       border-radius: 10rem;
       width: 14rem;
       height: 8rem;
-      /* object-fit: contain; */
       margin-bottom: 0.5rem;
   }
 `;
@@ -88,7 +93,6 @@ const Button = styled.button`
   a {
     color: white;
     font-size: 1.5rem;
-    /* vertical-align: middle; */
     margin-top: 1rem;
   }
 
