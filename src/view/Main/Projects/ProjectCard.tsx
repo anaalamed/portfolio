@@ -14,7 +14,6 @@ interface Repo {
   homepage: string
 }
 
-
 const Project: React.FC<Repo> = (repo: Repo) => {
 
   return (
@@ -71,10 +70,10 @@ const Box = styled.div`
 const Image = styled.div`
   
   img {
-      border-radius: 10rem;
-      width: 14rem;
-      height: 8rem;
-      margin-bottom: 0.5rem;
+    border-radius: 10rem;
+    width: 14rem;
+    height: 8rem;
+    margin-bottom: 0.5rem;
   }
 `;
 

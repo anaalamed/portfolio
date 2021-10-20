@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import 'antd/dist/antd.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import 'antd/dist/antd.css';
 
 import Project from './ProjectCard';
-
 
 const InfiniteScrollRender = ({ repos }) => {
     const [currentRepos, setCurrentRepos] = useState(repos.slice(0, 5));
@@ -17,7 +16,6 @@ const InfiniteScrollRender = ({ repos }) => {
         setTimeout(() => {
             setCurrentRepos(currentRepos.concat(repos.slice(0, 5)))
             repos.splice(0, 5);
-            console.log(repos);
         }, 1500);
     };
 

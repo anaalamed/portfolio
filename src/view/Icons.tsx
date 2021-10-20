@@ -24,25 +24,25 @@ export default Icons;
 
 
 const Box = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    h2 {
-        margin: 1rem;
-        font-size: 4rem;
-        cursor: pointer;
+  h2 {
+    margin: 1rem;
+    font-size: 4rem;
+    cursor: pointer;
 
-        a {
-          color: white;
-        }
-
-        @media only screen and (max-width: 1200px) {
-          font-size: 2.5rem;
-        }
-
-        @media only screen and (max-width: 812px) {
-          font-size: 1.8rem;
-        }
+    a {
+      color: white;
     }
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 2.5rem;
+    }
+
+    @media only screen and (max-width: 812px) {
+      font-size: 1.8rem;
+    }
+  }
 `;

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import 'antd/dist/antd.css';
-import { useWindowSize } from '../../../hooks/useWindowSize'
 
+import { useWindowSize } from '../../../hooks/useWindowSize'
 import { Title } from '../../../styles/global';
 import PaginatonRender from './Pagination';
 import InfiniteScrollRender from './InfiniteScrollRender';

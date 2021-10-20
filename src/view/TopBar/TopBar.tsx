@@ -52,7 +52,6 @@ const Header = styled.header`
 const Logo = styled.img`
   cursor: pointer;
   border-radius: 50%;
-  /* margin-left: 1rem; */
   width: 7rem;
 
   @media only screen and (max-width: 812px) {
@@ -73,7 +72,6 @@ const Nav = styled.ul`
     margin-top: 0.65rem;
   }
 `;
-
 
 const Link = styled(AnchorLink)`
   cursor: pointer;

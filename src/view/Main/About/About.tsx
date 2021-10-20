@@ -72,7 +72,6 @@ export default About;
 const Box = styled.section`
   margin-bottom: 5rem;
   margin-top: 2rem;
-
 `;
 
 const Content = styled.div`
@@ -83,7 +82,6 @@ const Content = styled.div`
   p {
     font-size: 1.5rem;
     text-align: left;
-    /* text-align: center; */
   }
 
   @media only screen and (max-width: 1012px) {
@@ -119,9 +117,9 @@ const Image = styled.div`
 `;
 
 const Details = styled.div`
-    img {
-      margin: 5px;
-    }
+  img {
+    margin: 5px;
+  }
 `;
 
 const Icons = styled.div`

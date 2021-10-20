@@ -15,15 +15,11 @@ const Toogle: React.FC<Props> = ({ setTheme }) => {
     }
 
     return (
-        <>
-            {/* <label> */}
-            <Toggle
-                name='theme'
-                onChange={onCheck}
-                icons={{ checked: < BsFillMoonFill />, unchecked: < BsFillSunFill /> }}
-            />
-            {/* </label> */}
-        </>
+        <Toggle
+            name='theme'
+            onChange={onCheck}
+            icons={{ checked: < BsFillMoonFill />, unchecked: < BsFillSunFill /> }}
+        />
     )
 };
 export default Toogle;

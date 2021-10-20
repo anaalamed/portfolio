@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Pagination } from 'antd';
-import 'antd/dist/antd.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import 'antd/dist/antd.css';
 
 import Project from './ProjectCard';
-
 
 interface Repos {
     [repo: number]: object
 }
 
 const PaginatonRender: React.FC<Repos> = ({ repos }) => {
-    console.log(repos);
+    // console.log(repos);
     const [currentPage, setCurrentPage] = useState(1);
     const [reposPerPage] = useState(6);
 

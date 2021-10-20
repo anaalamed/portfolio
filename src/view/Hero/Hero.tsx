@@ -40,7 +40,6 @@ const Box = styled.section`
       padding-top: 6rem;
       flex-direction: column;
       align-items: center;
-      /* justify-content: flex-start; */
     }
 
     @media only screen and (max-width: 812px) {
@@ -105,13 +104,12 @@ const Details = styled.div`
     left: 2rem;
     top: 3rem;
     font-size: 1.3rem;
-    /* width: max-content; */
     margin-right: 0;
     max-width: 20rem;
 
     h1, p {
     margin: 0.5rem;
-  }
+    }
   }
 `;
 
