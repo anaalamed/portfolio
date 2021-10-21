@@ -7,3 +7,5 @@ I've developed it with React. It uses GitHub API to get my repos.
 
 ![alt text](https://github.com/anaalamed/new-portfolio/blob/main/public/portfolio.png?raw=true) 
 
+![alt text](https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/times.png?alt=media&token=8f515d5f-0d77-47bf-aa68-216825980246) 
+

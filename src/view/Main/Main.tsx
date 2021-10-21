@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import styled from "styled-components";
 
-import About from './About/About';
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
+const About = lazy(() => import('./About/About'));
 
 const Main: React.FC = () => {
     const [repos, setRepos] = useState([]);
@@ -28,9 +28,15 @@ const Main: React.FC = () => {
         getRepos();
     }, [])
 
+
+    const renderLoader = () => <p>Loading</p>;
+
+
     return (
         <Box >
-            <About avatar={repos[0]?.owner.avatar_url}></About>
+            <Suspense fallback={renderLoader()}>
+                <About avatar={repos[0]?.owner.avatar_url}></About>
+            </Suspense>
             <Projects repos={repos}></Projects>
         </Box>
     );
