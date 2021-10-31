@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
-const About = lazy(() => import('./About/About'));
+// const About = lazy(() => import('./About/About'));
+import About from './About/About'
 
 const Main: React.FC = () => {
     const [repos, setRepos] = useState([]);
