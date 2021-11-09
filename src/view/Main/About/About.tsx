@@ -16,6 +16,7 @@ const About: React.FC<Avatar> = ({ avatar }) => {
     { logo: "JavaScript", color: "F7DF1E" },
     { logo: "jQuery", color: "2331eb" },
     { logo: "React", color: "61DAFB" },
+    { logo: "React", color: "61DAFB", name: "React Native" },
     { logo: "Redux", color: "764ABC" },
     { logo: "styled-components", color: "DB7093", name: "styled--components" }
   ]
@@ -33,7 +34,8 @@ const About: React.FC<Avatar> = ({ avatar }) => {
     { logo: "Git", color: "F05032" },
     { logo: "visual studio code", color: "007ACC", name: "VS Code" },
     { logo: "Postman", color: "e35b17" },
-    { logo: "Gatsby", color: "6115a3" }
+    { logo: "Expo", color: "grey" },
+    // { logo: "Gatsby", color: "6115a3" }
   ]
 
   return (
@@ -48,7 +50,7 @@ const About: React.FC<Avatar> = ({ avatar }) => {
             <Details>
               <p>I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
                 I'm a graduate of Full Stack Development course searching for my first opportunity as a developer. <br></br>
-                I’m coding for at least 3 hours every day. <br></br>
+                I’m coding for at least 4 hours every day. <br></br>
                 I come with a hands-on approach. <br></br>
                 I’m a quick learner. <br></br><br></br>
                 Skills:
