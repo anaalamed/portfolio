@@ -11,10 +11,33 @@ interface Repo {
   description: string,
   html_url: string,
   updated_at: string,
-  homepage: string
+  homepage: string,
+  topics: []
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
+
+  const renderIcons = (name) => {
+    let src = "";
+    switch (name) {
+      case "html": src = "https://img.icons8.com/color/48/000000/html-5.png"; break;
+      case "css": src = "https://img.icons8.com/color/48/000000/css3.png"; break;
+      case "js": src = "https://img.icons8.com/color/48/000000/javascript--v1.png"; break;
+      case "typescript": src = "https://img.icons8.com/color/48/000000/typescript.png"; break;
+      case "react": src = "https://img.icons8.com/color/48/000000/react-native.png"; break;
+      case "react-native": src = "https://img.icons8.com/color/48/000000/react-native.png"; break;
+      case "redux": src = "https://img.icons8.com/color/48/000000/redux.png"; break;
+      case "nodejs": src = "https://img.icons8.com/fluency/48/000000/node-js.png"; break;
+      case "firebase": src = "https://img.icons8.com/color/48/000000/firebase.png"; break;
+      case "canvas": src = "https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/40/000000/external-paint-canvas-university-vitaliy-gorbachev-blue-vitaly-gorbachev.png"; break;
+      case "mongodb": src = "https://img.icons8.com/color/48/000000/mongodb.png"; break;
+      case "heroku": src = "https://img.icons8.com/color/48/000000/heroku.png"; break;
+      case "sass": src = "https://img.icons8.com/color/48/000000/sass.png"; break;
+      case "graphql": src = "https://img.icons8.com/color/48/000000/graphql.png"; break;
+      case "apollo": src = "https://img.icons8.com/color/48/000000/apollo.png"; break;
+    }
+    return <img className="topics" src={src} />
+  }
 
   return (
     <Box >
@@ -22,6 +45,9 @@ const Project: React.FC<Repo> = (repo: Repo) => {
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
       <p className="description">{repo.description}</p>
+
+      <p>{repo.topics?.map(topic => renderIcons(topic))}</p>
+
       <p>last updated: {dayjs(repo.updated_at).format('DD/MM/YY')}</p>
       <Buttons>
         <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
@@ -59,11 +85,15 @@ const Box = styled.div`
   .description {
     flex-grow: 1;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
   }
 
   @media only screen and (max-width: 812px) {
     width: 16rem;
+
+    .topics {
+      width: 30px;
+    }
   }
 `;
 

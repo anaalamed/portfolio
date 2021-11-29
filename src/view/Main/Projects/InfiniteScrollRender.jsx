@@ -27,7 +27,7 @@ const InfiniteScrollRender = ({ repos }) => {
             loader={<h4 style={{ textAlign: 'center' }}>Loading...</h4>}
         >
             {currentRepos?.map(repo =>
-                (<Project key={repo.id} name={repo.name} image_url={repo.image_url} description={repo.description} html_url={repo.html_url} updated_at={repo.updated_at} homepage={repo.homepage}   ></Project>) // key={repo.id} ts error
+                (<Project key={repo.id} name={repo.name} image_url={repo.image_url} description={repo.description} html_url={repo.html_url} updated_at={repo.updated_at} homepage={repo.homepage} topics={repo.topics}  ></Project>) // key={repo.id} ts error
             )}
         </InfiniteScroll>
     );
