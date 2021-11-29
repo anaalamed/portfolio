@@ -88,6 +88,10 @@ const Box = styled.div`
     /* align-items: center; */
   }
 
+  .topics {
+    width: 35px;
+  }
+
   @media only screen and (max-width: 812px) {
     width: 16rem;
 

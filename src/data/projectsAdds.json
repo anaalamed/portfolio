@@ -8,13 +8,13 @@
     {
         "id": 423880810,
         "name:": "todo mobile",
-        "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/todo-mobile.png?alt=media&token=b2d2a050-f3b8-43e6-85a0-9630a1598c8a",
+        "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/todoMobile.png?alt=media&token=46cbb1cb-b29e-445e-9831-fda45d977a7f",
         "order": 2
     },
     {
         "id": 428182423,
         "name:": "todo spa",
-        "image_url": "https://github.com/anaalamed/todo-spa/blob/main/public/todos.png?raw=true",
+        "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/todoSpa.png?alt=media&token=541748c3-df67-4b03-8e3b-fdaf91ffa873",
         "order": 3
     },
     {
