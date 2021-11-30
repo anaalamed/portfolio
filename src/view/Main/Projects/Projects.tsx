@@ -6,6 +6,7 @@ import { useWindowSize } from '../../../hooks/useWindowSize'
 import { Title } from '../../../styles/global';
 import PaginatonRender from './Pagination';
 import InfiniteScrollRender from './InfiniteScrollRender';
+import YoutubeEmbed from "./YoutubeEmbed";
 
 interface Repos {
     [repo: number]: object
@@ -27,6 +28,7 @@ const Projects: React.FC<Repos> = ({ repos }) => {
     return (
         <Box id='projects' >
             <Title>Projects</Title>
+            <YoutubeEmbed></YoutubeEmbed>
 
             {(windowSize[0] <= 812) ?
                 (<InfiniteScrollRender repos={arrRepos}></InfiniteScrollRender>) :
