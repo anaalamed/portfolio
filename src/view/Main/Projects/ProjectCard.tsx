@@ -90,6 +90,16 @@ const Box = styled.div`
 
   .topics {
     width: 35px;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  h1:hover {
+    color: ${props => props.theme.body};
+    transform: scale(1.3);
+    transition: 1s;
   }
 
   @media only screen and (max-width: 812px) {
@@ -108,6 +118,13 @@ const Image = styled.div`
     width: 14rem;
     height: 8rem;
     margin-bottom: 0.5rem;
+
+    &:hover {
+      border: 2px solid;
+      border-color: ${props => props.theme.button};
+      transition: 1s;
+      transform: scale(1.1);
+    }
   }
 `;
 

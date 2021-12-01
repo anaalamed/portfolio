@@ -110,6 +110,13 @@ const Image = styled.div`
       border-radius: 50%;
       width: 20rem;
       height: 20rem;
+      border: 3px solid;
+      border-color: ${props => props.theme.topBar} ;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 1s;
+      }
 
       @media only screen and (max-width: 812px) {
         width: 15rem;
@@ -119,13 +126,20 @@ const Image = styled.div`
 `;
 
 const Details = styled.div`
-  img {
-    margin: 5px;
-  }
+   text-align: center;
 `;
 
 const Icons = styled.div`
   text-align: center;
+
+  img {
+    margin: 5px;
+  }
+  
+  img:hover {
+    transform: scale(1.2);
+    transition: 1s;
+  }
 `;
 
 

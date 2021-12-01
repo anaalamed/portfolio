@@ -92,6 +92,11 @@ const Details = styled.div`
 
   h1, p {
     margin: 1.5rem;
+
+    &:hover {
+    transform: scale(1.2);
+    transition: 1s;
+  }
   }
 
   @media only screen and (max-width: 1200px) {
@@ -139,6 +144,11 @@ const Button = styled.button`
   @media only screen and (max-width: 812px) {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition: 1s;
   }
 `;
 
