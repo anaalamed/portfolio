@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from '../../../styles/global';
+import YoutubeEmbed from "../Projects/YoutubeEmbed";
 
 interface Avatar {
   avatar: string
@@ -45,7 +46,7 @@ const About: React.FC<Avatar> = ({ avatar }) => {
           <Title>About</Title>
 
           <Content>
-            <Image><img src={avatar} alt='avatar' /></Image>
+            <Image><img src="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/profile%20(1).jpeg?alt=media&token=cba7f32e-c7c7-480d-852b-792b26e89412" alt='avatar' /></Image>
 
             <Details>
               <p>I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
@@ -63,6 +64,7 @@ const About: React.FC<Avatar> = ({ avatar }) => {
               </Icons>
             </Details>
           </Content>
+          <YoutubeEmbed></YoutubeEmbed>
         </Box >
       }
     </ThemeConsumer>
@@ -74,6 +76,9 @@ export default About;
 const Box = styled.section`
   margin-bottom: 5rem;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Content = styled.div`

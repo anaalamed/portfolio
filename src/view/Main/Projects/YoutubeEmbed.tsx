@@ -27,7 +27,7 @@ const Box = styled.div`
   background: ${props => props.theme.topBar};
   padding: 1rem 5rem;
   border-radius: 1rem;
-  margin: 1rem;
+  margin-top: 5rem;
 
   @media only screen and (max-width: 812px) {
     padding: 1rem 3rem;

@@ -27,8 +27,7 @@ const Projects: React.FC<Repos> = ({ repos }) => {
 
     return (
         <Box id='projects' >
-            <YoutubeEmbed></YoutubeEmbed>
-            <Title style={{ marginTop: "3rem" }}>Projects</Title>
+            <Title>Projects</Title>
 
             {(windowSize[0] <= 812) ?
                 (<InfiniteScrollRender repos={arrRepos}></InfiniteScrollRender>) :
