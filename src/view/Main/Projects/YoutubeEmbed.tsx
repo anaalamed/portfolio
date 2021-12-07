@@ -28,6 +28,7 @@ const Box = styled.div`
   padding: 1rem 5rem;
   border-radius: 1rem;
   margin-top: 5rem;
+  align-self: center;
 
   @media only screen and (max-width: 812px) {
     padding: 1rem 3rem;

@@ -78,7 +78,7 @@ const Box = styled.section`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 const Content = styled.div`
