@@ -35,6 +35,8 @@ const Project: React.FC<Repo> = (repo: Repo) => {
       case "sass": src = "https://img.icons8.com/color/48/000000/sass.png"; break;
       case "graphql": src = "https://img.icons8.com/color/48/000000/graphql.png"; break;
       case "apollo": src = "https://img.icons8.com/color/48/000000/apollo.png"; break;
+      case "vue": src = "https://img.icons8.com/color/48/000000/vue-js.png"; break;
+
     }
     return <img className="topics" src={src} />
   }

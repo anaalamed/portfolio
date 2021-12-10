@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
       <Skica>
         <Details>
           <Title>Ana Levit</Title>
-          <p>Junior Front End Developer</p>
+          <p>Junior Full Stack Developer</p>
           <AnchorLink offset='140' href='#about'>
             <Button >About me</Button>
           </AnchorLink>
