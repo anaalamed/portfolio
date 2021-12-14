@@ -70,12 +70,21 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
 
     a {
-      color: white;
-
-      :hover {
+      :hover, :active {
         color: ${props => props.theme.button};
       }
     }
+  }
+
+  .ant-pagination-item a {
+    color: white;
+  }
+
+  .ant-pagination-item-active a {
+    color: ${props => props.theme.topBar};
+    background: white;
+    border-radius: 50%;
+    border-color: ${props => props.theme.button};
   }
 
   .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {

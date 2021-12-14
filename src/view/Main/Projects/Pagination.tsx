@@ -54,7 +54,13 @@ export default PaginatonRender;
 
 
 const Collection = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 90%;
+  grid-gap: 1rem;
+  justify-content: space-evenly;
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: auto auto;
+  }
 `;
