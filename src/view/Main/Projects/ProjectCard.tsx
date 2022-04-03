@@ -52,20 +52,46 @@ const Project: React.FC<Repo> = (repo: Repo) => {
 
       <p>last updated: {dayjs(repo.updated_at).format('DD/MM/YY')}</p>
       <Buttons>
-        <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button>
+        {/* <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button> */}
+        <a href={repo.html_url} target="_blank" rel="noreferrer">
+          <Button data-tip="true" data-for="github" >
+            <GrGithub />
+            <ReactTooltip id="github" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>GitHub</ReactTooltip>
+          </Button>
+        </a>
+
         {(repo.homepage) ? (
-          <Button data-tip data-for="website"><a href={repo.homepage} target="_blank" rel="noreferrer"><CgWebsite /></a></Button>
+          <a href={repo.homepage} target="_blank" rel="noreferrer">
+            <Button data-tip data-for="website">
+              <CgWebsite />
+              <ReactTooltip id="website" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>Website</ReactTooltip>
+            </Button>
+          </a>
         ) : null}
       </Buttons>
 
-      <ReactTooltip id="github" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>GitHub</ReactTooltip>
-      <ReactTooltip id="website" place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>Website</ReactTooltip>
 
     </Box>
   );
 };
 export default Project;
 
+const Image = styled.div`
+    overflow: hidden;
+    width: 14rem;
+    height: 8rem;
+    position: relative;
+    border-radius: 10rem;
+    margin-bottom: 0.5rem;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: 1s;
+  }
+`;
 
 const Box = styled.div`
   background: ${props => props.theme.topBar};
@@ -78,6 +104,8 @@ const Box = styled.div`
   padding: 1rem;
   border-radius: 1rem;
   min-height: 23rem;
+  border-bottom: 5px solid ${props => props.theme.topBar};
+
 
   p {
     text-align: center;
@@ -93,16 +121,28 @@ const Box = styled.div`
   .topics {
     width: 35px;
 
-    &:hover {
-      transform: scale(1.3);
+    :hover {
+      transform: scale(1.2);
     }
+
   }
 
-  h1:hover {
-    color: ${props => props.theme.body};
-    transform: scale(1.3);
-    transition: 1s;
+  &:hover {
+    border-bottom: 5px solid white;
   }
+
+    &:hover ${Image} img {
+      border: 2px solid;
+      border-color: ${props => props.theme.button};
+      transition: 1s;
+      transform: scale(1.1);
+    }
+
+    &:hover p img {
+      /* margin: 0 5px;
+      transform: scale(1.3);
+      transition: 1s; */
+    }
 
   @media only screen and (max-width: 812px) {
     width: 16rem;
@@ -113,34 +153,12 @@ const Box = styled.div`
   }
 `;
 
-const Image = styled.div`
-  
-  img {
-    border-radius: 10rem;
-    width: 14rem;
-    height: 8rem;
-    margin-bottom: 0.5rem;
 
-    &:hover {
-      border: 2px solid;
-      border-color: ${props => props.theme.button};
-      transition: 1s;
-      transform: scale(1.1);
-    }
-  }
-`;
 
 const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-`;
-
-const Button = styled.button`
-  background: ${props => props.theme.button};
-  padding: 0.3rem 3rem 0 3rem;
-  border-radius: 1rem;
-  cursor: pointer;
 
   a {
     color: white;
@@ -149,11 +167,25 @@ const Button = styled.button`
   }
 
   @media only screen and (max-width: 812px) {
+    a {
+    font-size: 1rem;
+    }
+  }
+
+`;
+
+const Button = styled.button`
+  background: ${props => props.theme.button};
+  padding: 0.3rem 3rem 0 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+
+  @media only screen and (max-width: 812px) {
     padding: 0.2rem 2rem 0 2rem;
 
     a {
     font-size: 1rem;
     }
-  
   }
 `;

@@ -110,24 +110,32 @@ const Content = styled.div`
 
 const Image = styled.div`
   margin-left: 1rem;
+  overflow: hidden;
+  transition:  1s ease;
+  width: 20rem;
+  height: 20rem;
+  position: relative;
+  border-radius: 50%;
+  border-color: ${props => props.theme.topBar} ;
+  border: 3px solid;
+
   
   img {
-      border-radius: 50%;
-      width: 20rem;
-      height: 20rem;
-      border: 3px solid;
-      border-color: ${props => props.theme.topBar} ;
+      width: 100%;
+      height: 100%;
+      transform: scale(1);
+      transition:  1s;
 
       &:hover {
         transform: scale(1.2);
-        transition: 1s;
+        transition:  1s;
       }
 
+  }
       @media only screen and (max-width: 812px) {
         width: 15rem;
         height: 15rem;
       }
-  }
 `;
 
 const Details = styled.div`
@@ -139,6 +147,8 @@ const Icons = styled.div`
 
   img {
     margin: 5px;
+    transform: scale(1);
+    transition: 1s;
   }
   
   img:hover {
