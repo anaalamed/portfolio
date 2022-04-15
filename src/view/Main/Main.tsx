@@ -4,7 +4,9 @@ import styled from "styled-components";
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
 // const About = lazy(() => import('./About/About'));
-import About from './About/About'
+import About from './About/About';
+// import YoutubeEmbed from "./Projects/YoutubeEmbed";
+
 
 const Main: React.FC = () => {
     const [repos, setRepos] = useState([]);
@@ -39,6 +41,8 @@ const Main: React.FC = () => {
                 <About avatar={repos[0]?.owner.avatar_url}></About>
             </Suspense>
             <Projects repos={repos}></Projects>
+            {/* <YoutubeEmbed></YoutubeEmbed> */}
+
         </Box>
     );
 };

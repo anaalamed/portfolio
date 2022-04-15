@@ -8,18 +8,21 @@ const Hero: React.FC = () => {
 
   return (
     <Box id="front">
-      <Skica>
-        <Details>
-          <Title>Ana Levit</Title>
-          <p>Junior Full Stack Developer</p>
-          <AnchorLink offset='140' href='#about'>
-            <Button >About me</Button>
-          </AnchorLink>
-        </Details>
-        <Image><img src='2.svg' alt='' /></Image>
-      </Skica>
+      <Container>
 
-      <Icons></Icons>
+        <Skica>
+          <Details>
+            <Title>Ana Levit</Title>
+            <p>Junior Full Stack Developer</p>
+            <AnchorLink href='#about'>
+              <Button >About me</Button>
+            </AnchorLink>
+          </Details>
+          <Image><img src='2.svg' alt='' /></Image>
+        </Skica>
+
+        <Icons></Icons>
+      </Container>
     </Box>
   );
 };
@@ -28,9 +31,15 @@ export default Hero;
 
 const Box = styled.section`
   background: ${props => props.theme.hero};
+
+`;
+
+const Container = styled.div`
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
+  padding: 0 6%;
   display: flex;
   justify-content: space-between;
-  padding: 0 3rem ;
   width: 100%;
   height: 100vh;
   min-height: 55rem;
@@ -46,7 +55,7 @@ const Box = styled.section`
       height: auto;
       min-height: 0;
     }
-`;
+`
 
 const Skica = styled.div`
   height: 60rem;
