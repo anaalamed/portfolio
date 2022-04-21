@@ -32,8 +32,7 @@ export default Hero;
 
 const Box = styled.section`
   background: ${props => props.theme.hero};
-  height: 100vh;
-
+  /* height: 100vh; */
 `;
 
 const Container = styled.div`
@@ -41,7 +40,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
 
   @media ${devices.tablet} {
@@ -52,7 +51,7 @@ const Container = styled.div`
 
   @media ${devices.mobile} {
       height: auto;
-      min-height: 0;
+      min-height: 70vh;
   }
 `
 
@@ -80,7 +79,7 @@ const Image = styled.div`
     width: max-content;
   }
   @media ${devices.mobile} {
-    top: -10rem;
+    top: 3rem;
   }
 
   img {
@@ -124,10 +123,9 @@ const Details = styled.div`
 
   }
   @media ${devices.mobile} {
-    left: 2rem;
-    top: 3rem;
+    left: 4rem;
+    top: 5rem;
     font-size: 1.3rem;
-    margin-right: 0;
     max-width: 20rem;
 
     h1, p {
