@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../../../styles/global";
+import { devices } from "../../../styles/responsive";
 
 
 const YoutubeEmbed: React.FC = () => {
@@ -29,15 +30,24 @@ const Box = styled.div`
   border-radius: 1rem;
   margin-top: 5rem;
   align-self: center;
+  /* width: 100%; */
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     padding: 1rem 3rem;
+  }
+
+  @media ${devices.tablet} {
+    max-width: 750px;
   }
 `;
 
 const Video = styled.iframe`
-  @media only screen and (max-width: 812px) {
+/* width: 100%; */
+  @media ${devices.mobile} {
     height: 80%;
     width: 100%; 
+  }
+  @media ${devices.tablet} {
+    max-width: 600px;
   }
 `;

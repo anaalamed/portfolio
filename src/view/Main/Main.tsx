@@ -1,10 +1,11 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import styled from "styled-components";
 
 import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
 // const About = lazy(() => import('./About/About'));
 import About from './About/About';
+import { devices } from "../../styles/responsive";
 // import YoutubeEmbed from "./Projects/YoutubeEmbed";
 
 
@@ -42,7 +43,6 @@ const Main: React.FC = () => {
             </Suspense>
             <Projects repos={repos}></Projects>
             {/* <YoutubeEmbed></YoutubeEmbed> */}
-
         </Box>
     );
 };
@@ -53,11 +53,10 @@ const Box = styled.main`
   background: ${props => props.theme.about};
   padding: 1rem 6rem;
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.tablet} {
+    padding: 1rem;
+  }
+  @media ${devices.mobile} {
     padding: 1rem;
   }
 `;
-
-
-
-

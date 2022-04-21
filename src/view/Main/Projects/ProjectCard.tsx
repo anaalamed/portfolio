@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import ReactTooltip from 'react-tooltip';
 import { GrGithub } from 'react-icons/gr';
 import { CgWebsite } from 'react-icons/cg';
+import { devices } from "../../../styles/responsive";
 
 interface Repo {
   name: string,
@@ -52,7 +53,6 @@ const Project: React.FC<Repo> = (repo: Repo) => {
 
       <p>last updated: {dayjs(repo.updated_at).format('DD/MM/YY')}</p>
       <Buttons>
-        {/* <Button data-tip data-for="github"><a href={repo.html_url} target="_blank" rel="noreferrer"><GrGithub /></a></Button> */}
         <a href={repo.html_url} target="_blank" rel="noreferrer">
           <Button data-tip="true" data-for="github" >
             <GrGithub />
@@ -69,8 +69,6 @@ const Project: React.FC<Repo> = (repo: Repo) => {
           </a>
         ) : null}
       </Buttons>
-
-
     </Box>
   );
 };
@@ -106,7 +104,6 @@ const Box = styled.div`
   min-height: 23rem;
   border-bottom: 5px solid ${props => props.theme.topBar};
 
-
   p {
     text-align: center;
     font-size: 1rem;
@@ -131,20 +128,18 @@ const Box = styled.div`
     border-bottom: 5px solid white;
   }
 
-    &:hover ${Image} img {
-      border: 2px solid;
-      border-color: ${props => props.theme.button};
-      transition: 1s;
-      transform: scale(1.1);
-    }
+  &:hover ${Image} img {
+    border: 2px solid;
+    border-color: ${props => props.theme.button};
+    transition: 1s;
+    transform: scale(1.1);
+  }
 
-    &:hover p img {
-      /* margin: 0 5px;
-      transform: scale(1.3);
-      transition: 1s; */
-    }
+  @media ${devices.tablet} {
+    margin: 1rem;
+  }
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     width: 16rem;
 
     .topics {
@@ -152,8 +147,6 @@ const Box = styled.div`
     }
   }
 `;
-
-
 
 const Buttons = styled.div`
   display: flex;
@@ -166,12 +159,11 @@ const Buttons = styled.div`
     margin-top: 1rem;
   }
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     a {
     font-size: 1rem;
     }
   }
-
 `;
 
 const Button = styled.button`
@@ -180,8 +172,7 @@ const Button = styled.button`
   border-radius: 1rem;
   cursor: pointer;
 
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     padding: 0.2rem 2rem 0 2rem;
 
     a {

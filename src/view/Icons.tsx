@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ReactTooltip from 'react-tooltip';
+import { devices } from '../styles/responsive';
+
 
 import { GrLinkedinOption, GrGithub } from 'react-icons/gr';
 import { IoDocumentAttachOutline } from 'react-icons/io5';
@@ -37,12 +39,12 @@ const Box = styled.div`
       color: white;
     }
 
-    @media only screen and (max-width: 1200px) {
-      font-size: 2.5rem;
+    @media ${devices.mobile} {
+      font-size: 1.8rem;
     }
 
-    @media only screen and (max-width: 812px) {
-      font-size: 1.8rem;
+    @media ${devices.tablet} {
+      font-size: 2.5rem;
     }
   }
 `;

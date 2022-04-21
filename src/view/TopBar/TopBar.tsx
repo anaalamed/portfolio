@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import Toggle from './Toogle';
 import VerticalNav from './VerticalNav';
+import { devices } from "../../styles/responsive";
 
 interface Props {
   setTheme(): any
@@ -44,7 +45,7 @@ const Header = styled.header`
   padding: 0.4rem 2rem;
   width: 100%;
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
      padding: 0.3rem;
   }
 `;
@@ -53,8 +54,7 @@ const Logo = styled.img`
   cursor: pointer;
   border-radius: 50%;
   width: 7rem;
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
      width: 6rem;
   }
 `;
@@ -63,10 +63,9 @@ const Nav = styled.ul`
   list-style: none;
   display: flex;
   margin: 0;
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     display: none;
-  }  
+  }
 
   .toggle {
     margin-top: 0.65rem;
@@ -84,8 +83,7 @@ const Link = styled(AnchorLink)`
   :hover {
     color: ${props => props.theme.body}
   }
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     font-size: 1.3rem;
   }
 `;

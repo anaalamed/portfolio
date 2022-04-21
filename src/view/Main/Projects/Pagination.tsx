@@ -5,13 +5,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import 'antd/dist/antd.css';
 
 import Project from './ProjectCard';
+import { devices } from "../../../styles/responsive";
 
 interface Repos {
     [repo: number]: object
 }
 
 const PaginatonRender: React.FC<Repos> = ({ repos }) => {
-    // console.log(repos);
     const [currentPage, setCurrentPage] = useState(1);
     const [reposPerPage] = useState(6);
 
@@ -34,7 +34,7 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
 
     return (
         <>
-            <AnchorLink href='#projects' offset='140'>
+            <AnchorLink href='#projects' >
                 <Pagination current={currentPage} onChange={handleChangePage} total={repos?.length || 0} pageSize={reposPerPage} />
             </AnchorLink>
 
@@ -44,7 +44,7 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
                 )}
             </Collection>
 
-            <AnchorLink href='#projects' offset='140'>
+            <AnchorLink href='#projects' >
                 <Pagination current={currentPage} onChange={handleChangePage} total={repos?.length || 0} pageSize={reposPerPage} />
             </AnchorLink>
         </>
@@ -60,7 +60,7 @@ const Collection = styled.div`
   grid-gap: 1rem;
   justify-content: space-evenly;
 
-  @media only screen and (max-width: 1200px) {
+  @media ${devices.tablet} {
     grid-template-columns: auto auto;
   }
 `;

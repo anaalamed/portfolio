@@ -4,6 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { IoMdMenu } from "react-icons/io";
 
 import Toggle from './Toogle';
+import { devices } from "../../styles/responsive";
 
 interface Props {
   setTheme(): any,
@@ -46,8 +47,7 @@ export default VerticalNav;
 
 const RightNav = styled.div`
   display: none;
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     display: block;
   }
 `;
@@ -63,8 +63,7 @@ const MenuBtn = styled.button`
   :hover {
     color: ${props => props.theme.body}
   }
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     display: block;
   }
 `;
@@ -99,8 +98,7 @@ const Link = styled(AnchorLink)`
   :hover {
     color: ${props => props.theme.body}
   }
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     font-size: 1.3rem;
   }
 `;
@@ -119,8 +117,7 @@ const ButtonX = styled.button`
     font-size: 1.5rem;
     transition: 1s;
   }
-
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     display: block;
   }
 `;

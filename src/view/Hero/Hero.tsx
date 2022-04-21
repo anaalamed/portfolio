@@ -3,6 +3,7 @@ import styled from "styled-components";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import Icons from '../Icons';
+import { devices } from "../../styles/responsive";
 
 const Hero: React.FC = () => {
 
@@ -31,73 +32,79 @@ export default Hero;
 
 const Box = styled.section`
   background: ${props => props.theme.hero};
+  height: 100vh;
 
 `;
 
 const Container = styled.div`
-  /* max-width: 1400px; */
-  /* margin: 0 auto; */
   padding: 0 6%;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 100vh;
-  min-height: 55rem;
 
-  @media only screen and (max-width: 1200px) {
+
+  @media ${devices.tablet} {
       padding: 1rem 0 ;
-      padding-top: 6rem;
       flex-direction: column;
-      align-items: center;
-    }
+      justify-content: space-around;
+  }
 
-    @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
       height: auto;
       min-height: 0;
-    }
+  }
 `
 
 const Skica = styled.div`
   height: 60rem;
+  position: relative;
 
-  @media only screen and (max-width: 1200px) {
-    height: 40rem;
+  @media ${devices.tablet} {
+    height: 43rem; 
   }
 
-  @media only screen and (max-width: 812px) {
-    height: 20rem;
+  @media ${devices.mobile} {
+    height: 20rem; 
   }
 `;
 
 const Image = styled.div`
-  position: relative;
-  top: -15rem;
+  position: absolute;
+  bottom: 0;
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.tablet} {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: max-content;
+  }
+  @media ${devices.mobile} {
     top: -10rem;
   }
 
   img {
     width: 60rem;
 
-    @media only screen and (max-width: 1200px) {
-      width: 50rem;
+    @media ${devices.tablet} {
+      width: 48rem; 
     }
-      
-    @media only screen and (max-width: 812px) {
+    @media ${devices.mobile} {
       width: 23rem;
     }
   }
 `;
 
 const Details = styled.div`
-  position: relative;
   background-repeat:repeat-y;
-  left: 9rem;
-  top: 15rem;
   font-size: 3rem;
   z-index: 10;
   max-width: max-content;
+
+  position: absolute;
+  width: max-content;
+  bottom: 16rem;
+  left: 9rem;
 
   h1, p {
     margin: 1.5rem;
@@ -105,16 +112,18 @@ const Details = styled.div`
     &:hover {
     transform: scale(1.2);
     transition: 1s;
-  }
+    }
   }
 
-  @media only screen and (max-width: 1200px) {
-    left: 9rem;
-    top: 11rem;
+  @media ${devices.tablet} {
     font-size: 1.5rem;
-  }
+    bottom: 12rem;
+    left: 0;
+    right: 5rem;
+    margin: 0 auto;
 
-  @media only screen and (max-width: 812px) {
+  }
+  @media ${devices.mobile} {
     left: 2rem;
     top: 3rem;
     font-size: 1.3rem;
@@ -123,7 +132,7 @@ const Details = styled.div`
 
     h1, p {
     margin: 0.5rem;
-    }
+    } 
   }
 `;
 
@@ -132,11 +141,11 @@ const Title = styled.h1`
   text-shadow: 4px 4px 2px #585858;
   text-align: left;
 
-  @media only screen and (max-width: 1200px) {
+  @media ${devices.tablet} {
     font-size: 5rem;
   }
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     font-size: 3rem;
   }
 `;
@@ -150,7 +159,7 @@ const Button = styled.button`
   font-size: 1.2rem;
   cursor: pointer;
 
-  @media only screen and (max-width: 812px) {
+  @media ${devices.mobile} {
     font-size: 1rem;
     padding: 0.5rem 1rem;
   }
@@ -160,8 +169,3 @@ const Button = styled.button`
     transition: 1s;
   }
 `;
-
-
-
-
-

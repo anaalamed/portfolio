@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from '../../../styles/global';
+import { devices } from "../../../styles/responsive";
 import YoutubeEmbed from "../Projects/YoutubeEmbed";
 
 interface Avatar {
@@ -78,7 +79,8 @@ const Box = styled.section`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  margin: 0 auto;
+  padding-top: 5rem;
 `;
 
 const Content = styled.div`
@@ -91,21 +93,15 @@ const Content = styled.div`
     text-align: left;
   }
 
-  @media only screen and (max-width: 1012px) {
-      p {
-        font-size: 1rem;
-      }
-    }
-
-  @media only screen and (max-width: 812px) {
-      flex-direction: column;
-      align-items: center;
+  @media ${devices.tablet} {
+    flex-direction: column;
+    align-items: center;
 
       p {
         font-size: 1rem;
         text-align: center;
       }
-    }
+  }
 `;
 
 const Image = styled.div`
@@ -119,7 +115,6 @@ const Image = styled.div`
   border-color: ${props => props.theme.topBar} ;
   border: 3px solid;
 
-  
   img {
       width: 100%;
       height: 100%;
@@ -130,12 +125,11 @@ const Image = styled.div`
         transform: scale(1.2);
         transition:  1s;
       }
-
   }
-      @media only screen and (max-width: 812px) {
-        width: 15rem;
-        height: 15rem;
-      }
+  @media ${devices.mobile} {
+    width: 15rem;
+    height: 15rem;
+  }
 `;
 
 const Details = styled.div`
@@ -156,5 +150,3 @@ const Icons = styled.div`
     transition: 1s;
   }
 `;
-
-
