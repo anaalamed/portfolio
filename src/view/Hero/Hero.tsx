@@ -11,15 +11,15 @@ const Hero: React.FC = () => {
     <Box id="front">
       <Container>
 
-        <Skica>
-          <Details>
+        <Skica className="skica">
+          <Details className="details">
             <Title>Ana Levit</Title>
             <p>Junior Full Stack Developer</p>
             <AnchorLink href='#about'>
               <Button >About me</Button>
             </AnchorLink>
           </Details>
-          <Image><img src='2.svg' alt='' /></Image>
+          <Image className="imgWrapper"><img src='2.svg' alt='svgHero' /></Image>
         </Skica>
 
         <Icons></Icons>
@@ -32,7 +32,12 @@ export default Hero;
 
 const Box = styled.section`
   background: ${props => props.theme.hero};
-  /* height: 100vh; */
+  height: 100vh;
+
+  @media ${devices.mobile} {
+      height: auto;
+      min-height: 70vh;
+  }
 `;
 
 const Container = styled.div`
@@ -56,11 +61,11 @@ const Container = styled.div`
 `
 
 const Skica = styled.div`
-  height: 60rem;
+  height: 100vh;
   position: relative;
 
   @media ${devices.tablet} {
-    height: 43rem; 
+    height: 40rem; 
   }
 
   @media ${devices.mobile} {
@@ -69,27 +74,36 @@ const Skica = styled.div`
 `;
 
 const Image = styled.div`
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  height: 100vh;
 
   @media ${devices.tablet} {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    height: 60vh;
+    top: 5rem;
     left: 0;
     right: 0;
-    width: max-content;
+    width: auto;
   }
   @media ${devices.mobile} {
     top: 3rem;
+    height: 34vh;
   }
 
   img {
     width: 60rem;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
 
     @media ${devices.tablet} {
       width: 48rem; 
+      left: 0;
+      right: 0;
     }
     @media ${devices.mobile} {
-      width: 23rem;
+      width: 20rem;
     }
   }
 `;
@@ -104,6 +118,11 @@ const Details = styled.div`
   width: max-content;
   bottom: 16rem;
   left: 9rem;
+
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: fit-content;
 
   h1, p {
     margin: 1.5rem;
@@ -120,10 +139,10 @@ const Details = styled.div`
     left: 0;
     right: 5rem;
     margin: 0 auto;
-
+    top: 11rem;
   }
   @media ${devices.mobile} {
-    left: 4rem;
+    left: 3rem;
     top: 5rem;
     font-size: 1.3rem;
     max-width: 20rem;

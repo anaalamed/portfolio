@@ -108,8 +108,8 @@ const Image = styled.div`
   margin-left: 1rem;
   overflow: hidden;
   transition:  1s ease;
-  width: 20rem;
-  height: 20rem;
+  width: 300px;
+  height: 300px;
   position: relative;
   border-radius: 50%;
   border-color: ${props => props.theme.topBar} ;
@@ -127,8 +127,8 @@ const Image = styled.div`
       }
   }
   @media ${devices.mobile} {
-    width: 15rem;
-    height: 15rem;
+    width: 200px;
+    height: 200px;
   }
 `;
 
