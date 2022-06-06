@@ -12,7 +12,7 @@ const Icons: React.FC = () => {
 
   return (
     <Box >
-      <h2><a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=0e0e2321-db81-4d65-89ae-1f0a3bc1e6d1" target="_blank" rel="noreferrer"><IoDocumentAttachOutline data-tip data-for="cv" /></a></h2>
+      <h2><a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=eb255c1d-599f-4607-ae9d-a024e0c12cab" target="_blank" rel="noreferrer"><IoDocumentAttachOutline data-tip data-for="cv" /></a></h2>
       <h2><a href="https://github.com/anaalamed" target="_blank" rel="noreferrer"><GrGithub data-tip data-for="github" /></a></h2>
       <h2><a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer" ><GrLinkedinOption data-tip data-for="linkedin" /></a></h2>
 
