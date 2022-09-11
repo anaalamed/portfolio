@@ -7,6 +7,7 @@ import { CgWebsite } from 'react-icons/cg';
 import { devices } from "../../../styles/responsive";
 
 interface Repo {
+  id: number,
   name: string,
   image_url: string,
   description: string,
@@ -17,6 +18,7 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
+  console.log(repo);
 
   const renderIcons = (name) => {
     let src = "";
@@ -37,13 +39,14 @@ const Project: React.FC<Repo> = (repo: Repo) => {
       case "graphql": src = "https://img.icons8.com/color/48/000000/graphql.png"; break;
       case "apollo": src = "https://img.icons8.com/color/48/000000/apollo.png"; break;
       case "vue": src = "https://img.icons8.com/color/48/000000/vue-js.png"; break;
-
+      case "emailjs": src = "https://img.icons8.com/external-others-colourcreatype/64/000000/external-email-creatype-user-interface-filled-outline-others-colourcreatype-2.png"; break;
+      case "google-search-console": src = "https://img.icons8.com/color/48/000000/google-web-search--v1.png"; break;
     }
     return <img className="topics" src={src} />
   }
 
   return (
-    <Box >
+    <Box id={repo.id} className="projectCard">
       <h1>{(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(/[- _]/g, ' ')}</h1>
       <Image><img src={repo.image_url || "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"} alt='' /></Image>
 
