@@ -1,29 +1,45 @@
 import React from "react";
 import styled from "styled-components";
-import ReactTooltip from 'react-tooltip';
-import { devices } from '../styles/responsive';
+import ReactTooltip from "react-tooltip";
+import { devices } from "../styles/responsive";
 
-
-import { GrLinkedinOption, GrGithub } from 'react-icons/gr';
-import { IoDocumentAttachOutline } from 'react-icons/io5';
+import { GrLinkedinOption, GrGithub } from "react-icons/gr";
+import { IoDocumentAttachOutline } from "react-icons/io5";
 
 const Icons: React.FC = () => {
-  const tooltips = [{ name: "linkedin", note: "My LinkedIn profile" }, { name: "github", note: "My GitHub profile" }, { name: "cv", note: "My CV" }]
+  const tooltips = [
+    { name: "linkedin", note: "My LinkedIn profile" },
+    { name: "github", note: "My GitHub profile" },
+    { name: "cv", note: "My CV" },
+  ];
 
   return (
-    <Box >
-      <h2><a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=eb255c1d-599f-4607-ae9d-a024e0c12cab" target="_blank" rel="noreferrer"><IoDocumentAttachOutline data-tip data-for="cv" /></a></h2>
-      <h2><a href="https://github.com/anaalamed" target="_blank" rel="noreferrer"><GrGithub data-tip data-for="github" /></a></h2>
-      <h2><a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer" ><GrLinkedinOption data-tip data-for="linkedin" /></a></h2>
+    <Box>
+      <h2>
+        <a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=b4239db2-71bc-43f0-8d3d-a473a2a1f36b" target="_blank" rel="noreferrer">
+          <IoDocumentAttachOutline data-tip data-for="cv" />
+        </a>
+      </h2>
+      <h2>
+        <a href="https://github.com/anaalamed" target="_blank" rel="noreferrer">
+          <GrGithub data-tip data-for="github" />
+        </a>
+      </h2>
+      <h2>
+        <a href="https://www.linkedin.com/in/ana-levit-2934a0150" target="_blank" rel="noreferrer">
+          <GrLinkedinOption data-tip data-for="linkedin" />
+        </a>
+      </h2>
 
-      {tooltips.map(tooltip =>
-        (<ReactTooltip id={tooltip.name} place="top" effect="solid" backgroundColor={(props => props.theme.topBar)} textColor={"white"}>{tooltip.note}</ReactTooltip>)
-      )}
-    </Box >
+      {tooltips.map((tooltip) => (
+        <ReactTooltip id={tooltip.name} place="top" effect="solid" backgroundColor={(props) => props.theme.topBar} textColor={"white"}>
+          {tooltip.note}
+        </ReactTooltip>
+      ))}
+    </Box>
   );
 };
 export default Icons;
-
 
 const Box = styled.div`
   display: flex;

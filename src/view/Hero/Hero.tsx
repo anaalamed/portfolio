@@ -1,25 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
-import Icons from '../Icons';
+import Icons from "../Icons";
 import { devices } from "../../styles/responsive";
 
 const Hero: React.FC = () => {
-
   return (
     <Box id="front">
       <Container>
-
         <Skica className="skica">
           <Details className="details">
             <Title>Ana Levit</Title>
-            <p>Junior Full Stack Developer</p>
-            <AnchorLink href='#about'>
-              <Button >About me</Button>
+            <p>Full Stack Developer</p>
+            <AnchorLink href="#about">
+              <Button>About me</Button>
             </AnchorLink>
           </Details>
-          <Image className="imgWrapper"><img src='2.svg' alt='svgHero' /></Image>
+          <Image className="imgWrapper">
+            <img src="2.svg" alt="svgHero" />
+          </Image>
         </Skica>
 
         <Icons></Icons>
@@ -29,14 +29,13 @@ const Hero: React.FC = () => {
 };
 export default Hero;
 
-
 const Box = styled.section`
-  background: ${props => props.theme.hero};
+  background: ${(props) => props.theme.hero};
   height: 100vh;
 
   @media ${devices.mobile} {
-      height: auto;
-      min-height: 70vh;
+    height: auto;
+    min-height: 70vh;
   }
 `;
 
@@ -47,29 +46,28 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
 
-
   @media ${devices.tablet} {
-      padding: 1rem 0 ;
-      flex-direction: column;
-      justify-content: space-around;
+    padding: 1rem 0;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   @media ${devices.mobile} {
-      height: auto;
-      min-height: 70vh;
+    height: auto;
+    min-height: 70vh;
   }
-`
+`;
 
 const Skica = styled.div`
   height: 100vh;
   position: relative;
 
   @media ${devices.tablet} {
-    height: 40rem; 
+    height: 40rem;
   }
 
   @media ${devices.mobile} {
-    height: 20rem; 
+    height: 20rem;
   }
 `;
 
@@ -98,7 +96,7 @@ const Image = styled.div`
     margin: auto;
 
     @media ${devices.tablet} {
-      width: 48rem; 
+      width: 48rem;
       left: 0;
       right: 0;
     }
@@ -109,7 +107,7 @@ const Image = styled.div`
 `;
 
 const Details = styled.div`
-  background-repeat:repeat-y;
+  background-repeat: repeat-y;
   font-size: 3rem;
   z-index: 10;
   max-width: max-content;
@@ -124,12 +122,13 @@ const Details = styled.div`
   margin: auto;
   height: fit-content;
 
-  h1, p {
+  h1,
+  p {
     margin: 1.5rem;
 
     &:hover {
-    transform: scale(1.2);
-    transition: 1s;
+      transform: scale(1.2);
+      transition: 1s;
     }
   }
 
@@ -147,9 +146,10 @@ const Details = styled.div`
     font-size: 1.3rem;
     max-width: 20rem;
 
-    h1, p {
-    margin: 0.5rem;
-    } 
+    h1,
+    p {
+      margin: 0.5rem;
+    }
   }
 `;
 
@@ -168,7 +168,7 @@ const Title = styled.h1`
 `;
 
 const Button = styled.button`
-  background: ${props => props.theme.body};
+  background: ${(props) => props.theme.body};
   color: white;
   padding: 1rem 2rem;
   border-radius: 1rem;
