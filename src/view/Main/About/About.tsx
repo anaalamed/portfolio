@@ -65,7 +65,6 @@ const About: React.FC<Avatar> = ({ avatar }) => {
               </Icons>
             </Details>
           </Content>
-          <YoutubeEmbed></YoutubeEmbed>
         </Box >
       }
     </ThemeConsumer>
