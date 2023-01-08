@@ -5,6 +5,7 @@ import Projects from './Projects/Projects';
 import projects_adds from '../../data/projectsAdds.json'; // order + image
 // const About = lazy(() => import('./About/About'));
 import About from './About/About';
+import Blog from './Blog/Blog';
 import { devices } from "../../styles/responsive";
 // import YoutubeEmbed from "./Projects/YoutubeEmbed";
 
@@ -41,8 +42,9 @@ const Main: React.FC = () => {
             <Suspense fallback={renderLoader()}>
                 <About avatar={repos[0]?.owner.avatar_url}></About>
             </Suspense>
+
+            <Blog repos={repos}></Blog>
             <Projects repos={repos}></Projects>
-            {/* <YoutubeEmbed></YoutubeEmbed> */}
         </Box>
     );
 };
