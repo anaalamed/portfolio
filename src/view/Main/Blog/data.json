@@ -1,7 +1,7 @@
 [
   {
     "title": "Calendar App",
-    "description": "My final project at Start@Google bootcamp. It's mostly backend project uses Java, Spring Boot, Hibernate and MySql, and native JavaScript at frontend.   ",
+    "description": "My final project at Start@Google bootcamp. \nIt's mostly backend project uses Java, Spring Boot, Hibernate and MySql, and native JavaScript at frontend.   ",
     "date": "1.2023",
     "link": "https://www.youtube.com/embed/sg06_ziQ2FI",
     "order": 1,
@@ -9,7 +9,7 @@
   },
   {
     "title": "ToDo Cross-Platform App",
-    "description": "My first mobile app using Expo, React Native and TypeScript at Frontend, and Firebase services such as Auth, Firestore, Storage, Hosting and Cloud Functions. There is also a SPA uses React",
+    "description": "My first mobile app using Expo, React Native and TypeScript at Frontend, and Firebase services such as Auth, Firestore, Storage, Hosting and Cloud Functions. \nThere is also a SPA uses React.",
     "date": "11.2021",
     "link": "https://www.youtube.com/embed/5IBjLLmK5IA",
     "order": 2,

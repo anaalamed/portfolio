@@ -23,11 +23,11 @@ const Box = styled.div`
   /* width: 100%; */
 
   @media ${devices.mobile} {
-    padding: 1rem 3rem;
+    padding: 1rem;
   }
 
   @media ${devices.tablet} {
-    max-width: 750px;
+    /* max-width: 750px; */
   }
 `;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
-import { Title } from "../../../styles/global";
+// import { Title } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
 import YoutubeEmbed from "../Projects/YoutubeEmbed";
 import data from "./data.json";
@@ -46,13 +46,17 @@ const Box = styled.div`
   flex-direction: column;
   margin: 0 auto;
   margin-bottom: 5rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0;
   width: 80%;
   border-radius: 1rem;
   border-bottom: 5px solid ${(props) => props.theme.topBar};
 
   &:hover {
     border-bottom: 5px solid white;
+  }
+
+  @media ${devices.desktop} {
+    width: 60%;
   }
 `;
 
@@ -78,9 +82,21 @@ const Content = styled.div`
 
 const Details = styled.div``;
 
+export const Title = styled.h1`
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 4px 4px 2px #585858;
+
+  @media ${devices.mobile} {
+    font-size: 1rem;
+  }
+`;
+
 const Description = styled.div`
   text-align: left;
   margin-top: 0.5rem;
+  white-space: pre-line;
+  vertical-align: bottom;
 `;
 
 const Date = styled.div`
