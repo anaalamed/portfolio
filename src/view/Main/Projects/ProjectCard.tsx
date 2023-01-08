@@ -18,7 +18,6 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
-  console.log(repo);
 
   const renderIcons = (name) => {
     let src = "";
@@ -41,6 +40,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
       case "vue": src = "https://img.icons8.com/color/48/000000/vue-js.png"; break;
       case "emailjs": src = "https://img.icons8.com/external-others-colourcreatype/64/000000/external-email-creatype-user-interface-filled-outline-others-colourcreatype-2.png"; break;
       case "google-search-console": src = "https://img.icons8.com/color/48/000000/google-web-search--v1.png"; break;
+      case "airtable": src = "https://img.icons8.com/ios-filled/48/000000/airtable.png"; break;
     }
     return <img className="topics" src={src} />
   }
