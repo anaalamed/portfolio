@@ -16,7 +16,7 @@ const Icons: React.FC = () => {
   return (
     <Box>
       <h2>
-        <a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=b4239db2-71bc-43f0-8d3d-a473a2a1f36b" target="_blank" rel="noreferrer">
+        <a href="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/CV-Ana_Levit.pdf?alt=media&token=6618041b-f0c9-4230-8092-02f2481ee6fe" target="_blank" rel="noreferrer">
           <IoDocumentAttachOutline data-tip data-for="cv" />
         </a>
       </h2>

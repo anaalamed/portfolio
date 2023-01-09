@@ -1,42 +1,41 @@
 import React from "react";
 import styled from "styled-components";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 
-import { useWindowSize } from '../../../hooks/useWindowSize'
-import { Title } from '../../../styles/global';
-import PaginatonRender from './Pagination';
-import InfiniteScrollRender from './InfiniteScrollRender';
+import { useWindowSize } from "../../../hooks/useWindowSize";
+import { Title } from "../../../styles/global";
+import PaginatonRender from "./Pagination";
+import InfiniteScrollRender from "./InfiniteScrollRender";
 
 interface Repos {
-    [repo: number]: object
+  [repo: number]: object;
 }
 
 const Projects: React.FC<Repos> = ({ repos }) => {
-    var windowSize = useWindowSize();
-    // var arrRepos = [...repos]; // clone without refference for infinite scroll
+  var windowSize = useWindowSize();
 
-    // sort projects
-    if (repos.length !== 0) {
-        repos.sort(function (a, b) {
-            var pr1 = a.order || 100;
-            var pr2 = b.order || 100;
-            return pr1 - pr2;
-        });
-    }
+  let filteredAndSortedRepos = [];
+  // sort projects
+  if (repos.length !== 0) {
+    filteredAndSortedRepos = repos
+      .filter((repo) => repo.order != null)
+      .sort(function (a, b) {
+        var pr1 = a.order || 100;
+        var pr2 = b.order || 100;
+        return pr1 - pr2;
+      });
+    console.log(filteredAndSortedRepos);
+  }
 
-    return (
-        <Box id='projects' >
-            <Title>Projects</Title>
+  return (
+    <Box id="projects">
+      <Title>Projects</Title>
 
-            {(windowSize[0] <= 812) ?
-                (<InfiniteScrollRender repos={[...repos]}></InfiniteScrollRender>) :
-                (<PaginatonRender repos={repos}></PaginatonRender>)
-            }
-        </Box>
-    );
+      {filteredAndSortedRepos.length > 0 && windowSize[0] <= 812 ? <InfiniteScrollRender repos={[...filteredAndSortedRepos]}></InfiniteScrollRender> : <PaginatonRender repos={filteredAndSortedRepos}></PaginatonRender>}
+    </Box>
+  );
 };
 export default Projects;
-
 
 const Box = styled.section`
   display: flex;
