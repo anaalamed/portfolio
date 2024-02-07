@@ -1,10 +1,8 @@
 import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
-// import { Title } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
 import YoutubeEmbed from "../Projects/YoutubeEmbed";
-import data from "./data.json";
 
 interface Details {
   title: string;

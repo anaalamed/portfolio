@@ -3,7 +3,7 @@ import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
-import data from "./data.json";
+import data from "../../../data/blog.json";
 import Post from "./Post";
 
 interface Avatar {
