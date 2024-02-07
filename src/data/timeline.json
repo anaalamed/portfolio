@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Looking for my next challenge 👩🏻‍💻",
+    "company": "",
+    "description": [],
+    "date": "Present",
+    "icon": "search"
+  },
+  {
+    "id": 2,
+    "title": "Software Engineer",
+    "company": "Google, GCP, Filestore",
+    "description": [
+      "Designed backward compatibility functionality in the Data Security (backup) team. Backups are long lived cloud resources, and it’s important to make sure they are usable overtime and through representation changes. This involved designing backups in a way that preserves backward compatibility, and designing tests to identify and prevent breaks.",
+      "Led the scale and integrity testing project for customers backup. This involved designing regression testing, performance testing, high availability testing, and disaster recovery testing.",
+      "Investigated ways to reduce the cost of creating backups. This included implementing optimizations around special processing for Zero data.",
+      "Defined and implemented statistics and dashboards for regression detection and performance tracking."
+    ],
+    "date": "2023",
+    "icon": "work"
+  },
+  {
+    "id": 3,
+    "title": "Frontend Developer",
+    "company": "Konimbo",
+    "description": [
+      "Frontend development on virtual stores platform, improving experience both for admins and customers.",
+      "Full ownership, design, and implementation of a 'Quick View' feature, increasing customer conversion rates"
+    ],
+    "date": "2021 - 2022",
+    "icon": "work"
+  },
+  {
+    "id": 4,
+    "title": "Full Stack Development",
+    "company": "Netcraft Academy",
+    "description": ["JavaScript, CSS, Sass, HTML, MongoDB, NodeJS"],
+    "date": "2020 - 2021",
+    "icon": "education"
+  },
+  {
+    "id": 5,
+    "title": "Bs.C. Electrical and Electronics Engineering",
+    "company": "Ruppin Academic Center",
+    "description": [],
+    "date": "2016 - 2020",
+    "icon": "education"
+  },
+  {
+    "id": 6,
+    "title": "Naale Elite Academy",
+    "company": "Aloney Itzhak",
+    "description": [
+      "I came to Israel on my own when I was just 15 years old 🐣"
+    ],
+    "date": "2010 - 2013",
+    "icon": "education"
+  }
+]
