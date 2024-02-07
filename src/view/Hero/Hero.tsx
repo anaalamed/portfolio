@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
         <Skica className="skica">
           <Details className="details">
             <Title>Ana Levit</Title>
-            <p>Full Stack Developer</p>
+            <p>Software Engineer</p>
             <AnchorLink href="#about">
               <Button>About me</Button>
             </AnchorLink>

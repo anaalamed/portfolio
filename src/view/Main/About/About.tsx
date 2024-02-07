@@ -3,13 +3,12 @@ import styled, { ThemeConsumer } from "styled-components";
 
 import { Title } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
-import YoutubeEmbed from "../Projects/YoutubeEmbed";
 
 interface Avatar {
   avatar: string;
 }
 
-const About: React.FC<Avatar> = ({ avatar }) => {
+const About: React.FC<Avatar> = () => {
   const skillsFrontend = [
     { logo: "HTML5", color: "E34F26" },
     { logo: "CSS3", color: "1572B6" },
@@ -38,7 +37,6 @@ const About: React.FC<Avatar> = ({ avatar }) => {
     { logo: "visual studio code", color: "007ACC", name: "VS Code" },
     { logo: "Postman", color: "e35b17" },
     { logo: "Expo", color: "grey" },
-    // { logo: "Gatsby", color: "6115a3" }
   ];
 
   return (
@@ -49,31 +47,74 @@ const About: React.FC<Avatar> = ({ avatar }) => {
 
           <Content>
             <Image>
-              <img src="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/profile%20(1).jpeg?alt=media&token=cba7f32e-c7c7-480d-852b-792b26e89412" alt="avatar" />
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/profile%20(1).jpeg?alt=media&token=cba7f32e-c7c7-480d-852b-792b26e89412"
+                alt="avatar"
+              />
             </Image>
 
             <Details>
               <p>
-                I have completed my bachelor's degree in Electrical and Electronics Engineering, but my passion is coding! <br></br>
-                I'm a graduate of Full Stack Development course and have a year of experience as a developer.<br></br>
-                I'm a graduate of Start@Google Java Bootcamp.<br></br>I come with a hands-on approach. <br></br>
-                I’m a quick learner. <br></br>
-                I'm looking for my next opportunity!<br></br>
-                <br></br>
-                Skills:
+                I have completed my bachelor's degree in Electrical and
+                Electronics Engineering, but my passion is coding!<br></br>
+                I'm also a graduate of Full Stack Development course.
+              </p>
+              <p>
+                I have 2 years of experience as a software engineer. My last
+                position was at Google.
+              </p>
+              <p>
+                I come with a hands-on approach. I’m a fast learner, adaptive,
+                and proactive. I'm very undependent and also a great team
+                player.
               </p>
 
+              <p>
+                I'm looking for full-time opportunities to contribute my
+                expertise and collaborate with dynamic teams on cutting-edge
+                projects.
+              </p>
+
+              <br></br>
+              <p>Skills:</p>
               <Icons>
                 {skillsFrontend.map((badge) => (
-                  <img src={`https://img.shields.io/badge/${badge.name || badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>
+                  <img
+                    src={`https://img.shields.io/badge/${
+                      badge.name || badge.logo
+                    }-${theme.topBar.substring(1)}?logo=${
+                      badge.logo
+                    }&logoColor=${badge.color}`}
+                    alt={badge.logo}
+                    title={badge.logo}
+                    height="30"
+                  ></img>
                 ))}{" "}
                 <br></br>
                 {skillsBackend.map((badge) => (
-                  <img src={`https://img.shields.io/badge/${badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>
+                  <img
+                    src={`https://img.shields.io/badge/${
+                      badge.logo
+                    }-${theme.topBar.substring(1)}?logo=${
+                      badge.logo
+                    }&logoColor=${badge.color}`}
+                    alt={badge.logo}
+                    title={badge.logo}
+                    height="30"
+                  ></img>
                 ))}{" "}
                 <br></br>
                 {skillsTools.map((badge) => (
-                  <img src={`https://img.shields.io/badge/${badge.name || badge.logo}-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`} alt={badge.logo} title={badge.logo} height="30"></img>
+                  <img
+                    src={`https://img.shields.io/badge/${
+                      badge.name || badge.logo
+                    }-${theme.topBar.substring(1)}?logo=${
+                      badge.logo
+                    }&logoColor=${badge.color}`}
+                    alt={badge.logo}
+                    title={badge.logo}
+                    height="30"
+                  ></img>
                 ))}{" "}
                 <br></br>
               </Icons>
@@ -92,7 +133,7 @@ const Box = styled.section`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding: 0 5rem;
 `;
 
 const Content = styled.div`
@@ -120,7 +161,7 @@ const Image = styled.div`
   margin-left: 1rem;
   overflow: hidden;
   transition: 1s ease;
-  width: 300px;
+  min-width: 300px;
   height: 300px;
   position: relative;
   border-radius: 50%;
@@ -139,7 +180,7 @@ const Image = styled.div`
     }
   }
   @media ${devices.mobile} {
-    width: 200px;
+    min-width: 200px;
     height: 200px;
   }
 `;

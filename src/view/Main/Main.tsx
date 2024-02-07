@@ -39,7 +39,7 @@ const Main: React.FC = () => {
   return (
     <Box>
       <Suspense fallback={renderLoader()}>
-        <About avatar={repos[0]?.owner.avatar_url}></About>
+        <About></About>
       </Suspense>
 
       <Timeline></Timeline>
@@ -55,9 +55,9 @@ const Box = styled.main`
   background: ${(props) => props.theme.about};
 
   @media ${devices.tablet} {
-    padding: 1rem;
+    /* padding: 1rem; */
   }
   @media ${devices.mobile} {
-    padding: 1rem;
+    /* padding: 1rem; */
   }
 `;
