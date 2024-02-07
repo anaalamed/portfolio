@@ -6,6 +6,7 @@ import projects_adds from "../../data/projectsAdds.json"; // order + image
 // const About = lazy(() => import('./About/About'));
 import About from "./About/About";
 import Blog from "./Blog/Blog";
+import Timeline from "./Timeline/Timeline";
 import { devices } from "../../styles/responsive";
 
 const Main: React.FC = () => {
@@ -13,7 +14,9 @@ const Main: React.FC = () => {
 
   const fetchRepos = async () => {
     // repos from github API
-    const res = await fetch("https://api.github.com/users/anaalamed/repos?per_page=100");
+    const res = await fetch(
+      "https://api.github.com/users/anaalamed/repos?per_page=100"
+    );
     const repos = await res.json();
 
     // merge repos with adds from json
@@ -39,6 +42,7 @@ const Main: React.FC = () => {
         <About avatar={repos[0]?.owner.avatar_url}></About>
       </Suspense>
 
+      <Timeline></Timeline>
       <Blog repos={repos}></Blog>
       <Projects repos={repos}></Projects>
     </Box>
@@ -49,7 +53,6 @@ export default Main;
 const Box = styled.main`
   width: 100%;
   background: ${(props) => props.theme.about};
-  padding: 1rem 6rem;
 
   @media ${devices.tablet} {
     padding: 1rem;
