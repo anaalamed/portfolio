@@ -16,7 +16,7 @@ const Timelene: React.FC = () => {
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Box id="timelime">
+        <Box id="timeline">
           <Title>Timeline</Title>
 
           <VerticalTimeline>
@@ -41,7 +41,7 @@ const Box = styled.section`
   margin: 0 auto;
   margin-top: 5rem;
   padding: 5rem 0.5rem;
-  background: ${(props) => props.theme.topBar};
+  background: ${(props) => props.theme.hero};
 `;
 
 const Content = styled.div`

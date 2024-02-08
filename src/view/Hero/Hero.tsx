@@ -7,7 +7,7 @@ import { devices } from "../../styles/responsive";
 
 const Hero: React.FC = () => {
   return (
-    <Box id="front">
+    <Box id="hero">
       <Container>
         <Skica className="skica">
           <Details className="details">
@@ -40,7 +40,7 @@ const Box = styled.section`
 `;
 
 const Container = styled.div`
-  padding: 0 6%;
+  padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
