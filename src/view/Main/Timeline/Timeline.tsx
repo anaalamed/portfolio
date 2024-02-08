@@ -40,7 +40,7 @@ const Box = styled.section`
   flex-direction: column;
   margin: 0 auto;
   margin-top: 5rem;
-  padding-top: 5rem;
+  padding: 5rem 0.5rem;
   background: ${(props) => props.theme.topBar};
 `;
 
