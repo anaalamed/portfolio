@@ -1,5 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+
+export const headerHeght = 100;
 
 export const GlobalStyles = createGlobalStyle`
   *,
@@ -27,59 +29,36 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  .toggle {
-    margin-top: 0.4rem;
-  }
-
   h1 {
     color: white;
   }
 
   /*  -------------------------- toggle ------------------------------  */
   .react-toggle-track {
-    background: ${props => props.theme.body};
-    width: 150px;
-    height: 50px;
-    box-shadow: aliceblue;
-    border: 1px solid white;
+    background: ${(props) => props.theme.body};
   }
 
   .react-toggle--checked .react-toggle-track {
-    background: ${props => props.theme.body};
+    background: ${(props) => props.theme.body};
   }
 
-  .react-toggle-thumb {
-    width: 47px;
-    height: 47px;
-  }
-
-  .react-toggle-track-check, 
-  .react-toggle-track-x  {
+  .react-toggle-track-check, .react-toggle-track-x  {
     display: none;
   }
 
-  .react-toggle--checked .react-toggle-thumb {
-    left: 102px;
-  }
-
-  .react-toggle-thumb,
-  .react-toggle--checked .react-toggle-thumb {
-    border-color: ${props => props.theme.topBar};
-  }
-
   .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background: ${props => props.theme.button};
+    background: ${(props) => props.theme.button};
   }
 
   /*  -------------------------- tooltip ------------------------------  */
 
   .__react_component_tooltip {
-    background: ${props => props.theme.body};
+    background: ${(props) => props.theme.body};
   }
 
   /*  -------------------------- pagination ------------------------------  */
   .ant-pagination li {
-    background: ${props => props.theme.topBar};
+    background: ${(props) => props.theme.topBar};
     border-radius: 50%;
     margin: 3rem 0.5rem ;
     border: none;
@@ -88,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
 
     a {
       :hover, :active {
-        color: ${props => props.theme.button};
+        color: ${(props) => props.theme.button};
       }
     }
   }
@@ -98,27 +77,25 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .ant-pagination-item-active a {
-    color: ${props => props.theme.topBar};
+    color: ${(props) => props.theme.topBar};
     background: white;
     border-radius: 50%;
-    border-color: ${props => props.theme.button};
+    border-color: ${(props) => props.theme.button};
   }
 
   .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
-    background: ${props => props.theme.topBar};  
+    background: ${(props) => props.theme.topBar};  
     color: white;
     border-radius: 50%;
     border: none;
     :hover {
-          color: ${props => props.theme.button};
+          color: ${(props) => props.theme.button};
         }
     }
-  `
+  `;
 
 export const Title = styled.h1`
   font-size: 2.5rem;
   text-align: center;
   text-shadow: 4px 4px 2px #585858;
 `;
-
-
