@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { devices } from "./responsive";
 
 export const headerHeght = 100;
 
@@ -95,7 +96,13 @@ export const GlobalStyles = createGlobalStyle`
   `;
 
 export const SectionBox = styled.section`
-  margin: 4rem 0 auto;
+  margin: 0 auto;
+  padding: 3rem 5rem;
+
+  @media ${devices.mobile} {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
 `;
 
 export const Title = styled.h1`

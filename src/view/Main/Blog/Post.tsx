@@ -19,11 +19,11 @@ const Post: React.FC<Details> = ({ details }) => {
     <ThemeConsumer>
       {(theme) => (
         <Box className="post">
+          <Title>{details.title}</Title>
+
           <Content>
             <YoutubeEmbed link={details.link}></YoutubeEmbed>
-
             <Details>
-              <Title>{details.title}</Title>
               <Date>{details.date}</Date>
               <Description>{details.description}</Description>
               <Button>
@@ -45,16 +45,18 @@ const Box = styled.div`
   margin: 0 auto;
   margin-bottom: 5rem;
   padding: 2rem 1rem 0;
-  width: 80%;
+  max-width: 47%;
   border-radius: 1rem;
   border-bottom: 5px solid ${(props) => props.theme.topBar};
+  overflow: hidden;
 
   &:hover {
     border-bottom: 5px solid white;
   }
 
-  @media ${devices.desktop} {
-    width: 60%;
+  @media ${devices.tablet} {
+    width: 80%;
+    max-width: 80%;
   }
 `;
 
@@ -81,7 +83,7 @@ const Content = styled.div`
 const Details = styled.div``;
 
 export const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.7rem;
   text-align: center;
   text-shadow: 4px 4px 2px #585858;
 
