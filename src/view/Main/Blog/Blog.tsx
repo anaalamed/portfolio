@@ -38,8 +38,8 @@ const Box = styled(SectionBox)`
 
 const Content = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 
   @media ${devices.tablet} {
     flex-direction: column;
