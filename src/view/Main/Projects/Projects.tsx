@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "antd/dist/antd.css";
 
 import { useWindowSize } from "../../../hooks/useWindowSize";
-import { Title } from "../../../styles/global";
+import { Title, SectionBox } from "../../../styles/global";
 import PaginatonRender from "./Pagination";
 import InfiniteScrollRender from "./InfiniteScrollRender";
 
@@ -31,15 +31,20 @@ const Projects: React.FC<Repos> = ({ repos }) => {
     <Box id="projects">
       <Title>Projects</Title>
 
-      {filteredAndSortedRepos.length > 0 && windowSize[0] <= 812 ? <InfiniteScrollRender repos={[...filteredAndSortedRepos]}></InfiniteScrollRender> : <PaginatonRender repos={filteredAndSortedRepos}></PaginatonRender>}
+      {filteredAndSortedRepos.length > 0 && windowSize[0] <= 812 ? (
+        <InfiniteScrollRender
+          repos={[...filteredAndSortedRepos]}
+        ></InfiniteScrollRender>
+      ) : (
+        <PaginatonRender repos={filteredAndSortedRepos}></PaginatonRender>
+      )}
     </Box>
   );
 };
 export default Projects;
 
-const Box = styled.section`
+const Box = styled(SectionBox)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5rem;
 `;

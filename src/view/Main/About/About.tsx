@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
-import { Title } from "../../../styles/global";
+import { Title, SectionBox } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
 
 import {
@@ -86,13 +86,9 @@ const About: React.FC<Avatar> = () => {
 };
 export default About;
 
-const Box = styled.section`
-  margin-bottom: 5rem;
-  margin-top: 2rem;
+const Box = styled(SectionBox)`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  padding: 0 5rem;
 `;
 
 const Content = styled.div`

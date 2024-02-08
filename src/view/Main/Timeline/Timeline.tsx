@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
-import { Title } from "../../../styles/global";
+import { Title, SectionBox } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
 
 import { VerticalTimeline } from "react-vertical-timeline-component";
@@ -33,15 +33,11 @@ const Timelene: React.FC = () => {
 };
 export default Timelene;
 
-const Box = styled.section`
-  margin-bottom: 5rem;
-  margin-top: 2rem;
+const Box = styled(SectionBox)`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  margin-top: 5rem;
-  padding: 5rem 0.5rem;
   background: ${(props) => props.theme.hero};
+  padding: 3rem 0.5rem;
 `;
 
 const Content = styled.div`
