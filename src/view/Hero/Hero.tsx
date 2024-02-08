@@ -4,6 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import Icons from "../Icons";
 import { devices } from "../../styles/responsive";
+import { headerHeght } from "../../styles/global";
 
 const Hero: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Hero: React.FC = () => {
           <Details className="details">
             <Title>Ana Levit</Title>
             <p>Software Engineer</p>
-            <AnchorLink href="#about">
+            <AnchorLink href="#about" offset={headerHeght}>
               <Button>About me</Button>
             </AnchorLink>
           </Details>

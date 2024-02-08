@@ -94,6 +94,10 @@ export const GlobalStyles = createGlobalStyle`
     }
   `;
 
+export const SectionBox = styled.section`
+  margin: 4rem 0 auto;
+`;
+
 export const Title = styled.h1`
   font-size: 2.5rem;
   text-align: center;
