@@ -13,12 +13,13 @@ interface Repo {
   image_url: string;
   description: string;
   html_url: string;
-  updated_at: string;
+  pushed_at: string;
   homepage: string;
   topics: [];
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
+  console.log("boom:", repo.pushed_at);
   return (
     <Box id={repo.id} className="projectCard">
       <h1>
@@ -41,7 +42,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
 
       <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
 
-      <p>last updated: {dayjs(repo.updated_at).format("DD/MM/YY")}</p>
+      <p>last updated: {dayjs(repo.pushed_at).format("DD/MM/YY")}</p>
       <Buttons>
         <a href={repo.html_url} target="_blank" rel="noreferrer">
           <Button data-tip="true" data-for="github">
