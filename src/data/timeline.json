@@ -18,7 +18,8 @@
       "Defined and implemented statistics and dashboards for regression detection and performance tracking."
     ],
     "date": "2023",
-    "icon": "work"
+    "icon": "work",
+    "topics": ["mysql", "java"]
   },
   {
     "id": 3,
@@ -29,15 +30,16 @@
       "Full ownership, design, and implementation of a 'Quick View' feature, increasing customer conversion rates"
     ],
     "date": "2021 - 2022",
-    "icon": "work"
+    "icon": "work",
+    "topics": ["js"]
   },
   {
     "id": 4,
     "title": "Full Stack Development",
     "company": "Netcraft Academy",
-    "description": ["JavaScript, CSS, Sass, HTML, MongoDB, NodeJS"],
     "date": "2020 - 2021",
-    "icon": "education"
+    "icon": "education",
+    "topics": ["js", "react", "mongodb", "nodejs", "html", "css"]
   },
   {
     "id": 5,

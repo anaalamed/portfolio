@@ -1,4 +1,6 @@
-export const getIconByName = (name) => {
+import React from "react";
+
+const getIconByName = (name) => {
   switch (name) {
     case "html":
       return "https://img.icons8.com/color/48/000000/html-5.png";
@@ -39,7 +41,7 @@ export const getIconByName = (name) => {
     case "airtable":
       return "https://img.icons8.com/ios-filled/48/000000/airtable.png";
     case "java":
-      return "https://img.icons8.com/color/48/000000/java.png";
+      return "";
     case "springboot":
       return "https://img.icons8.com/color/48/000000/spring-logo.png";
     case "mysql":
@@ -47,4 +49,16 @@ export const getIconByName = (name) => {
     case "golang":
       return "https://img.icons8.com/color/48/000000/golang.png";
   }
+};
+
+export const generateImgTagByIconName = (name) => {
+  return React.createElement(
+    "img",
+    {
+      src: getIconByName(name),
+      class: "topics",
+      // alt: name,
+    },
+    null
+  );
 };

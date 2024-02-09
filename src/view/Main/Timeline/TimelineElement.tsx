@@ -7,6 +7,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+import { generateImgTagByIconName } from "../../../data/projectIcons";
 
 interface Details {
   id: number;
@@ -66,6 +67,12 @@ const TimelineElement: React.FC<Details> = ({ details }) => {
           ) : (
             <p>{details.description}</p>
           )}
+
+          {/* <div>
+            {details.topics?.map((topic) => (
+              <span> {topic}</span>
+            ))}
+          </div> */}
         </VerticalTimelineElement>
       )}
     </ThemeConsumer>

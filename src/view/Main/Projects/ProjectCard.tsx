@@ -5,7 +5,7 @@ import ReactTooltip from "react-tooltip";
 import { GrGithub } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
 import { devices } from "../../../styles/responsive";
-import { getIconByName } from "../../../data/projectIcons";
+import { generateImgTagByIconName } from "../../../data/projectIcons";
 
 interface Repo {
   id: number;
@@ -19,11 +19,6 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
-  const renderIcons = (name) => {
-    let src = getIconByName(name);
-    return <img className="topics" src={src} />;
-  };
-
   return (
     <Box id={repo.id} className="projectCard">
       <h1>
@@ -44,7 +39,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
 
       <p className="description">{repo.description}</p>
 
-      <p>{repo.topics?.map((topic) => renderIcons(topic))}</p>
+      <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
 
       <p>last updated: {dayjs(repo.updated_at).format("DD/MM/YY")}</p>
       <Buttons>
