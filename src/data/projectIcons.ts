@@ -7,6 +7,7 @@ const getIconByName = (name) => {
     case "css":
       return "https://img.icons8.com/color/48/000000/css3.png";
     case "js":
+    case "javascript":
       return "https://img.icons8.com/color/48/000000/javascript--v1.png";
     case "typescript":
       return "https://img.icons8.com/color/48/000000/typescript.png";
@@ -26,6 +27,8 @@ const getIconByName = (name) => {
       return "https://img.icons8.com/color/48/000000/mongodb.png";
     case "heroku":
       return "https://img.icons8.com/color/48/000000/heroku.png";
+    case "gatsby":
+      return "https://img.icons8.com/?size=512&id=wuXkMKKeb6hi&format=png";
     case "sass":
       return "https://img.icons8.com/color/48/000000/sass.png";
     case "graphql":
@@ -41,7 +44,7 @@ const getIconByName = (name) => {
     case "airtable":
       return "https://img.icons8.com/ios-filled/48/000000/airtable.png";
     case "java":
-      return "";
+      return "https://img.icons8.com/?size=512&id=lTKW3iI3wIT0&format=png";
     case "springboot":
       return "https://img.icons8.com/color/48/000000/spring-logo.png";
     case "mysql":
@@ -52,10 +55,16 @@ const getIconByName = (name) => {
 };
 
 export const generateImgTagByIconName = (name) => {
+  const src = getIconByName(name);
+
+  if (src === undefined) {
+    return;
+  }
+
   return React.createElement(
     "img",
     {
-      src: getIconByName(name),
+      src: src,
       class: "topics",
       // alt: name,
     },
