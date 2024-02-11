@@ -51,6 +51,11 @@ const getIconByName = (name) => {
       return "https://img.icons8.com/color/48/000000/mysql.png";
     case "golang":
       return "https://img.icons8.com/color/48/000000/golang.png";
+    case "unity":
+      return "https://img.icons8.com/?size=256&id=55O6KKA9CyIA&format=png";
+    case "csharp":
+    case "c#":
+      return "https://img.icons8.com/?size=256&id=Fycm8TUhWmFU&format=png";
   }
 };
 
