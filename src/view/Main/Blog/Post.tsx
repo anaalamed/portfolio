@@ -13,8 +13,6 @@ interface Details {
 }
 
 const Post: React.FC<Details> = ({ details }) => {
-  console.log(details);
-
   return (
     <ThemeConsumer>
       {(theme) => (
@@ -23,13 +21,13 @@ const Post: React.FC<Details> = ({ details }) => {
 
           <Content>
             <YoutubeEmbed link={details.link}></YoutubeEmbed>
-            <Details>
+            <div>
               <Date>{details.date}</Date>
               <Description>{details.description}</Description>
               <Button>
                 <a href={details.github}>More...</a>
               </Button>
-            </Details>
+            </div>
           </Content>
         </Box>
       )}
@@ -79,8 +77,6 @@ const Content = styled.div`
     }
   }
 `;
-
-const Details = styled.div``;
 
 export const Title = styled.h1`
   font-size: 1.7rem;

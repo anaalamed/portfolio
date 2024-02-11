@@ -6,13 +6,7 @@ import { devices } from "../../../styles/responsive";
 import data from "../../../data/blog.json";
 import Post from "./Post";
 
-interface Avatar {
-  avatar: string;
-}
-
-const About: React.FC<Avatar> = ({ avatar }) => {
-  console.log(data);
-
+const About: React.FC = () => {
   return (
     <ThemeConsumer>
       {(theme) => (
