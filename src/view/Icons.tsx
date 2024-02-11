@@ -38,7 +38,6 @@ const Icons: React.FC = () => {
           <GrLinkedinOption data-tip data-for="linkedin" />
         </a>
       </h2>
-
       {tooltips.map((tooltip) => (
         <ReactTooltip
           id={tooltip.name}

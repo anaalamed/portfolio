@@ -24,7 +24,7 @@ const Projects: React.FC<Repos> = ({ repos }) => {
         var pr2 = b.order || 100;
         return pr1 - pr2;
       });
-    console.log(filteredAndSortedRepos);
+    console.log("repos: ", filteredAndSortedRepos);
   }
 
   return (
