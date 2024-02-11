@@ -30,12 +30,6 @@
     "order": 5
   },
   {
-    "id": 532056427,
-    "name:": "Herzliya Tzlilim - landing page",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/Screen%20Shot%202022-09-11%20at%2022.40.09.png?alt=media&token=addc8c74-d00d-4f07-806d-2919bd5a227a",
-    "order": 6
-  },
-  {
     "id": 419686908,
     "name:": "space-invaders",
     "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/space-invaders.png?alt=media&token=c7175b17-fe88-4f4e-ad57-4aed1c064977",
@@ -51,25 +45,13 @@
     "id": 406261236,
     "name:": "island game",
     "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/game.png?alt=media&token=b57e8241-fa00-4760-8e5d-6a343cfea543",
-    "order": 9
-  },
-  {
-    "id": 428182423,
-    "name:": "todo spa",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/todoSpa.png?alt=media&token=541748c3-df67-4b03-8e3b-fdaf91ffa873",
-    "order": 10
+    "order": null
   },
   {
     "id": 565467588,
     "name:": "repository sql",
     "image_url": "",
     "order": 10
-  },
-  {
-    "id": 385135546,
-    "name:": "tvmaze",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/tvmaze.png?alt=media&token=cad8a443-0a88-4d6e-b963-0258607fc200",
-    "order": 11
   },
   {
     "id": 420360362,
@@ -89,18 +71,11 @@
     "image_url": "",
     "order": 19
   },
-
   {
     "id": 413091640,
     "name:": "github readme",
     "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/githubReadme.png?alt=media&token=78ba3822-ca4c-4a7a-83b8-24539ef26822",
     "order": 15
-  },
-  {
-    "id": 420127657,
-    "name:": "graphqlZero_posts",
-    "order": 20,
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/graphql_posts%20(1).png?alt=media&token=307f2cb0-9f9b-434e-b202-5aa408a9a863"
   },
   {
     "id": 422593805,
@@ -115,30 +90,11 @@
     "order": 20
   },
   {
-    "id": 382403021,
-    "name:": "todo",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/todo.png?alt=media&token=f4c0eead-cf8a-462d-b3a9-b2168a412887",
-    "order": 20
-  },
-  {
     "id": 380976422,
     "name:": "massage",
     "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/massage.png?alt=media&token=660c4c06-cc3a-4723-91d8-75c3a5b0f433",
     "order": 20
   },
-  {
-    "id": 404704713,
-    "name:": "news",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/news.png?alt=media&token=9341c346-aedd-4041-9bb4-a0de535051d4",
-    "order": 20
-  },
-  {
-    "id": 380716844,
-    "name:": "old portfolio",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/portfolio.png?alt=media&token=065c896d-99bb-4148-9b37-fc39132c608e",
-    "order": 20
-  },
-
   {
     "id": 397933204,
     "name:": "",
@@ -161,24 +117,6 @@
     "id": 362434149,
     "name:": "",
     "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/expressServer.png?alt=media&token=4751a901-4338-49a9-b531-a6d5158d4ed6",
-    "order": 100
-  },
-  {
-    "id": 403917897,
-    "name:": "template",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/template.png?alt=media&token=30799279-60dd-422c-86ed-dd3914484b3e",
-    "order": 100
-  },
-  {
-    "id": 414582829,
-    "name:": "portfolio js no order",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/Screen%20Shot%202021-10-15%20at%2010.11.07%2011.05.17.png?alt=media&token=807ff6f3-e604-40e4-9c09-d6a6cec09308",
-    "order": 100
-  },
-  {
-    "id": 420711491,
-    "name:": "portfolio jest",
-    "image_url": "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/Screen%20Shot%202021-10-15%20at%2010.11.07%2011.05.17.png?alt=media&token=807ff6f3-e604-40e4-9c09-d6a6cec09308",
     "order": 100
   }
 ]
