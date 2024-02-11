@@ -24,6 +24,7 @@ const About: React.FC<Avatar> = () => {
         alt: badge.logo,
         title: badge.logo,
         height: 30,
+        key: badge.logo,
       },
       null
     );
@@ -141,10 +142,6 @@ const Image = styled.div`
 `;
 
 const Details = styled.div`
-  text-align: center;
-`;
-
-const Skills = styled.div`
   text-align: center;
 `;
 

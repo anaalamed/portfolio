@@ -17,9 +17,6 @@ const TopBar: React.FC<Props> = ({ setTheme }) => {
   const ref = useRef();
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      console.log("aaaaa");
-      console.log("open", open);
-      console.log("ref", ref);
       if (open && ref.current && !ref.current.contains(e.target)) {
         setOpen(false);
       }

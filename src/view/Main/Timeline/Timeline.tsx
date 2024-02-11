@@ -11,8 +11,6 @@ import TimelineElement from "./TimelineElement";
 import data from "../../../data/timeline.json";
 
 const Timelene: React.FC = () => {
-  console.log(data);
-
   return (
     <ThemeConsumer>
       {(theme) => (

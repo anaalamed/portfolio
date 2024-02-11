@@ -19,7 +19,6 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
-  console.log("boom:", repo.pushed_at);
   return (
     <Box id={repo.id} className="projectCard">
       <h1>
