@@ -70,8 +70,8 @@ export const generateImgTagByIconName = (name) => {
     "img",
     {
       src: src,
-      class: "topics",
-      // alt: name,
+      className: "topics",
+      alt: name,
     },
     null
   );
