@@ -19,6 +19,9 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
+  const defaultImgUrl =
+    "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=638845c2-f6e2-49b4-b69b-828a80a3f32a";
+
   return (
     <Box id={repo.id} className="projectCard">
       <h1>
@@ -28,13 +31,7 @@ const Project: React.FC<Repo> = (repo: Repo) => {
         )}
       </h1>
       <Image>
-        <img
-          src={
-            repo.image_url ||
-            "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"
-          }
-          alt=""
-        />
+        <img src={repo.image_url || defaultImgUrl} alt="projectImg" />
       </Image>
 
       <p className="description">{repo.description}</p>
