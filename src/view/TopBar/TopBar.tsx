@@ -30,12 +30,12 @@ const TopBar: React.FC<Props> = ({ setTheme }) => {
   }, [open]);
 
   return (
-    <Header>
+    <Header ref={ref}>
       <Link offset={headerHeght} href="#hero">
         <Logo src="logo192.png"></Logo>
       </Link>
 
-      <Nav display={open} ref={ref}>
+      <Nav open={open}>
         <li>
           <Link
             offset={headerHeght}
@@ -126,7 +126,7 @@ const Nav = styled.ul`
   margin: 0;
 
   @media ${devices.mobile} {
-    display: ${(props) => (props.display ? "block" : "none")};
+    display: ${(props) => (props.open === true ? "block" : "none")};
     background: ${(props) => props.theme.topBar};
     list-style: none;
     position: absolute;
