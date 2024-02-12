@@ -69,6 +69,7 @@ export const generateImgTagByIconName = (name) => {
   return React.createElement(
     "img",
     {
+      key: name,
       src: src,
       className: "topics",
       alt: name,

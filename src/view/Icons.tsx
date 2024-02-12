@@ -46,6 +46,7 @@ const Icons: React.FC = () => {
           </h2>
           {tooltips.map((tooltip) => (
             <ReactTooltip
+              key={tooltip.name}
               id={tooltip.name}
               place="top"
               effect="solid"

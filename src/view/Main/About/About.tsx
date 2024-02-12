@@ -24,7 +24,7 @@ const About: React.FC<Avatar> = () => {
         alt: badge.logo,
         title: badge.logo,
         height: 30,
-        key: badge.logo,
+        key: badge.logo.concat("-", badge.name),
       },
       null
     );
