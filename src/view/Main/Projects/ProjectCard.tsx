@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 import dayjs from "dayjs";
 import ReactTooltip from "react-tooltip";
 import { GrGithub } from "react-icons/gr";
@@ -19,63 +19,64 @@ interface Repo {
 }
 
 const Project: React.FC<Repo> = (repo: Repo) => {
+  const defaultImgUrl =
+    "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=638845c2-f6e2-49b4-b69b-828a80a3f32a";
+
   return (
-    <Box id={repo.id} className="projectCard">
-      <h1>
-        {(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(
-          /[- _]/g,
-          " "
-        )}
-      </h1>
-      <Image>
-        <img
-          src={
-            repo.image_url ||
-            "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=38d06bf9-e833-4c42-b4bf-f9cf0558c274"
-          }
-          alt=""
-        />
-      </Image>
+    <ThemeConsumer>
+      {(theme) => (
+        <Box id={repo.id} className="projectCard">
+          <h1>
+            {(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(
+              /[- _]/g,
+              " "
+            )}
+          </h1>
+          <Image>
+            <img src={repo.image_url || defaultImgUrl} alt="projectImg" />
+          </Image>
 
-      <p className="description">{repo.description}</p>
+          <p className="description">{repo.description}</p>
 
-      <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
+          <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
 
-      <p>last updated: {dayjs(repo.pushed_at).format("DD/MM/YY")}</p>
-      <Buttons>
-        <a href={repo.html_url} target="_blank" rel="noreferrer">
-          <Button data-tip="true" data-for="github">
-            <GrGithub />
-            <ReactTooltip
-              id="github"
-              place="top"
-              effect="solid"
-              backgroundColor={(props) => props.theme.topBar}
-              textColor={"white"}
-            >
-              GitHub
-            </ReactTooltip>
-          </Button>
-        </a>
+          <p>last updated: {dayjs(repo.pushed_at).format("DD/MM/YY")}</p>
+          <Buttons>
+            <a href={repo.html_url} target="_blank" rel="noreferrer">
+              <Button data-tip="true" data-for="github">
+                <GrGithub />
+                <ReactTooltip
+                  id="github"
+                  place="top"
+                  effect="solid"
+                  backgroundColor={theme.body}
+                  textColor={"white"}
+                >
+                  GitHub
+                </ReactTooltip>
+              </Button>
+            </a>
 
-        {repo.homepage ? (
-          <a href={repo.homepage} target="_blank" rel="noreferrer">
-            <Button data-tip data-for="website">
-              <CgWebsite />
-              <ReactTooltip
-                id="website"
-                place="top"
-                effect="solid"
-                backgroundColor={(props) => props.theme.topBar}
-                textColor={"white"}
-              >
-                Website
-              </ReactTooltip>
-            </Button>
-          </a>
-        ) : null}
-      </Buttons>
-    </Box>
+            {repo.homepage ? (
+              <a href={repo.homepage} target="_blank" rel="noreferrer">
+                <Button data-tip data-for="website">
+                  <CgWebsite />
+                  <ReactTooltip
+                    id="website"
+                    place="top"
+                    effect="solid"
+                    backgroundColor={theme.body}
+                    textColor={"white"}
+                  >
+                    Website
+                  </ReactTooltip>
+                </Button>
+              </a>
+            ) : null}
+          </Buttons>
+        </Box>
+      )}
+    </ThemeConsumer>
   );
 };
 export default Project;

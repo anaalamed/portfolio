@@ -60,7 +60,7 @@ const TimelineElement: React.FC<Details> = ({ details }) => {
           {details.description?.length > 1 ? (
             <ul>
               {details.description.map((bullet) => (
-                <LiItem>{bullet}</LiItem>
+                <LiItem key={bullet}>{bullet}</LiItem>
               ))}
             </ul>
           ) : (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Pagination } from "antd";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import "antd/dist/antd.css";
 
 import Project from "./ProjectCard";
@@ -33,14 +32,12 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
 
   return (
     <>
-      <AnchorLink href="#projects">
-        <Pagination
-          current={currentPage}
-          onChange={handleChangePage}
-          total={repos?.length || 0}
-          pageSize={reposPerPage}
-        />
-      </AnchorLink>
+      <Pagination
+        current={currentPage}
+        onChange={handleChangePage}
+        total={repos?.length || 0}
+        pageSize={reposPerPage}
+      />
 
       <Collection>
         {currentRepos?.map((repo) => (
@@ -58,14 +55,12 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
         ))}
       </Collection>
 
-      <AnchorLink href="#projects">
-        <Pagination
-          current={currentPage}
-          onChange={handleChangePage}
-          total={repos?.length || 0}
-          pageSize={reposPerPage}
-        />
-      </AnchorLink>
+      <Pagination
+        current={currentPage}
+        onChange={handleChangePage}
+        total={repos?.length || 0}
+        pageSize={reposPerPage}
+      />
     </>
   );
 };
