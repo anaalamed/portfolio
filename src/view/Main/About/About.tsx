@@ -69,7 +69,6 @@ const About: React.FC<Avatar> = () => {
           </Content>
 
           <Icons>
-            <p>Skills:</p>
             <div>
               {skillsFrontend.map((badge) => generateImgTag(badge, theme))}
             </div>

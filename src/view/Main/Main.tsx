@@ -8,6 +8,7 @@ import About from "./About/About";
 import Blog from "./Blog/Blog";
 import Timeline from "./Timeline/Timeline";
 import { devices } from "../../styles/responsive";
+import Awards from "./Awards/Awards";
 
 const Main: React.FC = () => {
   const [repos, setRepos] = useState([]);
@@ -42,6 +43,7 @@ const Main: React.FC = () => {
         <About></About>
       </Suspense>
 
+      <Awards></Awards>
       <Timeline></Timeline>
       <Blog repos={repos}></Blog>
       <Projects repos={repos}></Projects>
