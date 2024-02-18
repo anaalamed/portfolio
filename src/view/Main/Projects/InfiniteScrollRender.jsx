@@ -2,23 +2,22 @@ import React, { useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import 'antd/dist/antd.css';
 import styled from "styled-components";
-
-
 import Project from './ProjectCard';
 
 const InfiniteScrollRender = ({ repos }) => {
-  const [currentRepos, setCurrentRepos] = useState(repos.slice(0, 6));
+  const numProjectsToLoad = 3;
+  const [currentRepos, setCurrentRepos] = useState(repos.slice(0, numProjectsToLoad));
   const [hasMore, setHasMore] = useState(true);
 
   const fetchMoreData = () => {
-    if (repos.length === 0) {
+    setTimeout(() => {
+      repos.splice(0, numProjectsToLoad);
+      setCurrentRepos(currentRepos.concat(repos.slice(0, numProjectsToLoad)))
+    }, 1500);
+
+    if (repos.length < numProjectsToLoad) {
       setHasMore(false);
     }
-
-    setTimeout(() => {
-      setCurrentRepos(currentRepos.concat(repos.slice(0, 6)))
-      repos.splice(0, 6);
-    }, 1500);
   };
 
   return (
@@ -26,7 +25,8 @@ const InfiniteScrollRender = ({ repos }) => {
       dataLength={currentRepos.length}
       next={fetchMoreData}
       hasMore={hasMore}
-      loader={<h4 style={{ textAlign: 'center' }}>Loading...</h4>}
+      loader={<p>Loading...</p>}
+      endMessage={<p >Yay! You have seen it all ;)</p>}
     >
       {currentRepos?.map(repo =>
       (<Project id={repo.id}
@@ -47,6 +47,12 @@ export default InfiniteScrollRender;
 
 const Box = styled(InfiniteScroll)`
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
 `
