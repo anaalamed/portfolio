@@ -93,6 +93,14 @@ export const GlobalStyles = createGlobalStyle`
           color: ${(props) => props.theme.button};
         }
     }
+
+  /*  -------------------------- awards slider ----------------------------  */
+  .slick-list {
+    margin: 0 -8px;
+  }
+  .slick-slide > div {
+    padding: 0 8px;
+  }
   `;
 
 export const SectionBox = styled.section`
