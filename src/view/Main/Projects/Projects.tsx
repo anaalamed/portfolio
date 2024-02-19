@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import "antd/dist/antd.css";
 
@@ -6,37 +6,28 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 import { Title, SectionBox } from "../../../styles/global";
 import PaginatonRender from "./Pagination";
 import InfiniteScrollRender from "./InfiniteScrollRender";
+import { getSortedRepos } from "../../../data/generateProjectsData";
 
-interface Repos {
-  [repo: number]: object;
-}
-
-const Projects: React.FC<Repos> = ({ repos }) => {
+const Projects: React.FC = () => {
+  const [repos, setRepos] = useState([]);
   var windowSize = useWindowSize();
 
-  let filteredAndSortedRepos = [];
-  // sort projects
-  if (repos.length !== 0) {
-    filteredAndSortedRepos = repos
-      .filter((repo) => repo.order != null)
-      .sort(function (a, b) {
-        var pr1 = a.order || 100;
-        var pr2 = b.order || 100;
-        return pr1 - pr2;
-      });
-    console.log("repos: ", filteredAndSortedRepos);
-  }
+  useEffect(() => {
+    async function getRepos() {
+      const repos = await getSortedRepos();
+      setRepos(repos);
+    }
+    getRepos();
+  }, []);
 
   return (
     <Box id="projects">
       <Title>Projects</Title>
 
-      {filteredAndSortedRepos.length > 0 && windowSize[0] <= 812 ? (
-        <InfiniteScrollRender
-          repos={[...filteredAndSortedRepos]}
-        ></InfiniteScrollRender>
+      {repos.length > 0 && windowSize[0] <= 812 ? (
+        <InfiniteScrollRender repos={[...repos]}></InfiniteScrollRender>
       ) : (
-        <PaginatonRender repos={filteredAndSortedRepos}></PaginatonRender>
+        <PaginatonRender repos={repos}></PaginatonRender>
       )}
     </Box>
   );
