@@ -1,3 +1,12 @@
+import React from "react";
+import { Theme } from "../styles/theme";
+
+interface Badge {
+  logo: string;
+  color: string;
+  name?: string;
+}
+
 export const skillsFrontend = [
   { logo: "HTML5", color: "E34F26" },
   { logo: "CSS3", color: "1572B6" },
@@ -32,8 +41,22 @@ export const skillsTools = [
   { logo: "Expo", color: "grey" },
 ];
 
-export const generateLink = (badge, theme) => {
+const generateBadgeLink = (badge: Badge, theme: Theme) => {
   return `https://img.shields.io/badge/${
     badge.name || badge.logo
   }-${theme.topBar.substring(1)}?logo=${badge.logo}&logoColor=${badge.color}`;
+};
+
+export const generateImgTag = (badge: Badge, theme: Theme) => {
+  return React.createElement(
+    "img",
+    {
+      src: generateBadgeLink(badge, theme),
+      alt: badge.logo,
+      title: badge.logo,
+      height: 30,
+      key: badge.logo.concat("-", badge.name || ""),
+    },
+    null
+  );
 };

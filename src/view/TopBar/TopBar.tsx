@@ -8,24 +8,24 @@ import { headerHeght } from "../../styles/global";
 import { IoMdMenu } from "react-icons/io";
 
 interface Props {
-  setTheme(): any;
+  setTheme: any;
 }
 
 const TopBar: React.FC<Props> = ({ setTheme }) => {
   const [open, setOpen] = useState(false);
 
-  const ref = useRef();
+  const ref = useRef<HTMLElement>(null);
   useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if (open && ref.current && !ref.current.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (open && ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", checkIfClickedOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [open]);
 
@@ -119,7 +119,7 @@ const Logo = styled.img`
   }
 `;
 
-const Nav = styled.ul`
+const Nav = styled.ul<{ open: boolean }>`
   list-style: none;
   display: flex;
   align-items: center;

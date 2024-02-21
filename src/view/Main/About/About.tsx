@@ -8,28 +8,10 @@ import {
   skillsFrontend,
   skillsBackend,
   skillsTools,
-  generateLink,
+  generateImgTag,
 } from "../../../data/badgeIcons";
 
-interface Avatar {
-  avatar: string;
-}
-
-const About: React.FC<Avatar> = () => {
-  const generateImgTag = (badge, theme) => {
-    return React.createElement(
-      "img",
-      {
-        src: generateLink(badge, theme),
-        alt: badge.logo,
-        title: badge.logo,
-        height: 30,
-        key: badge.logo.concat("-", badge.name),
-      },
-      null
-    );
-  };
-
+const About: React.FC = () => {
   return (
     <ThemeConsumer>
       {(theme) => (

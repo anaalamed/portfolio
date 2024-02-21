@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Toogle: React.FC<Props> = ({ setTheme }) => {
-  const onCheck = (e) => {
+  const onCheck = () => {
     setTheme();
   };
 

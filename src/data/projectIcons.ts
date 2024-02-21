@@ -1,6 +1,6 @@
 import React from "react";
 
-const getIconByName = (name) => {
+const getIconByName = (name: string) => {
   switch (name) {
     case "html":
       return "https://img.icons8.com/color/48/000000/html-5.png";
@@ -59,7 +59,7 @@ const getIconByName = (name) => {
   }
 };
 
-export const generateImgTagByIconName = (name) => {
+export const generateImgTagByIconName = (name: string) => {
   const src = getIconByName(name);
 
   if (src === undefined) {

@@ -6,26 +6,16 @@ import { GrGithub } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
 import { devices } from "../../../styles/responsive";
 import { generateImgTagByIconName } from "../../../data/projectIcons";
+import { Repo } from "../../../data/generateProjectsData";
 
-interface Repo {
-  id: number;
-  name: string;
-  image_url: string;
-  description: string;
-  html_url: string;
-  pushed_at: string;
-  homepage: string;
-  topics: [];
-}
-
-const Project: React.FC<Repo> = (repo: Repo) => {
+const Project: React.FC<{ repo: Repo }> = ({ repo }) => {
   const defaultImgUrl =
     "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=638845c2-f6e2-49b4-b69b-828a80a3f32a";
 
   return (
     <ThemeConsumer>
       {(theme) => (
-        <Box id={repo.id} className="projectCard">
+        <Box id={"repo_".concat(String(repo.id))} className="projectCard">
           <h1>
             {(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(
               /[- _]/g,

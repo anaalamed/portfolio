@@ -1,10 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import { devices } from "./responsive";
+import { Theme } from "./theme";
 
 export const headerHeght = 100;
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   *,
   *::after,
   *::before {

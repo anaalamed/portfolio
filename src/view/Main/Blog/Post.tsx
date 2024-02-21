@@ -2,30 +2,31 @@ import React from "react";
 import styled, { ThemeConsumer } from "styled-components";
 
 import { devices } from "../../../styles/responsive";
-import YoutubeEmbed from "../Projects/YoutubeEmbed";
+import YoutubeEmbed from "./YoutubeEmbed";
 
-interface Details {
+interface PostData {
   title: string;
   description: string;
   date: string;
   link: string;
   order: number;
+  github: string;
 }
 
-const Post: React.FC<Details> = ({ details }) => {
+const Post: React.FC<{ post: PostData }> = ({ post }) => {
   return (
     <ThemeConsumer>
       {(theme) => (
         <Box className="post">
-          <Title>{details.title}</Title>
+          <Title>{post.title}</Title>
 
           <Content>
-            <YoutubeEmbed link={details.link}></YoutubeEmbed>
+            <YoutubeEmbed link={post.link}></YoutubeEmbed>
             <div>
-              <Date>{details.date}</Date>
-              <Description>{details.description}</Description>
+              <Date>{post.date}</Date>
+              <Description>{post.description}</Description>
               <Button>
-                <a href={details.github}>More...</a>
+                <a href={post.github}>More...</a>
               </Button>
             </div>
           </Content>

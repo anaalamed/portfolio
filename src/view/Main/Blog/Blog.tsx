@@ -15,7 +15,7 @@ const About: React.FC = () => {
 
           <Content className="posts-wrapper">
             {data.map((post) => (
-              <Post key={post.title} details={post}></Post>
+              <Post key={post.title} post={post}></Post>
             ))}
           </Content>
         </Box>

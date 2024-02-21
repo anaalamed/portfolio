@@ -8,17 +8,18 @@ import { IoSchool } from "react-icons/io5";
 import { MdOutlineWork } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 
-interface Details {
+interface TimelineElementData {
   id: number;
   title: string;
   company: string;
-  description: string;
+  description: string[];
   date: string;
+  icon: string;
 }
 
-const TimelineElement: React.FC<Details> = ({ details }) => {
-  let icon, iconStyle;
-  switch (details.icon) {
+const TimelineElement: React.FC<{ data: TimelineElementData }> = ({ data }) => {
+  let icon: JSX.Element, iconStyle: any;
+  switch (data.icon) {
     case "education":
       icon = <IoSchool />;
       iconStyle = { background: "rgb(233, 30, 99)", color: "#fff" };
@@ -40,7 +41,7 @@ const TimelineElement: React.FC<Details> = ({ details }) => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: theme.body, color: "#fff" }}
           contentArrowStyle={{ borderRight: `7px solid  ${theme.body}` }}
-          date={details.date}
+          date={data.date}
           iconStyle={iconStyle}
           icon={icon}
         >
@@ -48,23 +49,23 @@ const TimelineElement: React.FC<Details> = ({ details }) => {
             className="vertical-timeline-element-title"
             style={{ color: "#fff" }}
           >
-            {details.title}
+            {data.title}
           </h3>
           <h4
             className="vertical-timeline-element-subtitle"
             style={{ color: "#fff" }}
           >
-            {details.company}
+            {data.company}
           </h4>
 
-          {details.description?.length > 1 ? (
+          {data.description?.length > 1 ? (
             <ul>
-              {details.description.map((bullet) => (
+              {data.description.map((bullet) => (
                 <LiItem key={bullet}>{bullet}</LiItem>
               ))}
             </ul>
           ) : (
-            <p>{details.description}</p>
+            <p>{data.description}</p>
           )}
         </VerticalTimelineElement>
       )}

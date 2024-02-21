@@ -6,10 +6,10 @@ import { useWindowSize } from "../../../hooks/useWindowSize";
 import { Title, SectionBox } from "../../../styles/global";
 import PaginatonRender from "./Pagination";
 import InfiniteScrollRender from "./InfiniteScrollRender";
-import { getSortedRepos } from "../../../data/generateProjectsData";
+import { getSortedRepos, Repos } from "../../../data/generateProjectsData";
 
 const Projects: React.FC = () => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<Repos>([]);
   var windowSize = useWindowSize();
 
   useEffect(() => {
