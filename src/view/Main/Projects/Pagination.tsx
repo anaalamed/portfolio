@@ -5,12 +5,9 @@ import "antd/dist/antd.css";
 
 import Project from "./ProjectCard";
 import { devices } from "../../../styles/responsive";
+import { Repos } from "../../../data/generateProjectsData";
 
-interface Repos {
-  [repo: number]: object;
-}
-
-const PaginatonRender: React.FC<Repos> = ({ repos }) => {
+const PaginatonRender: React.FC<{ repos: Repos }> = ({ repos }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [reposPerPage] = useState(6);
 
@@ -28,7 +25,7 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
   const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
   var currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
 
-  const handleChangePage = (pageNumber) => setCurrentPage(pageNumber);
+  const handleChangePage = (pageNumber: any) => setCurrentPage(pageNumber);
 
   return (
     <>
@@ -41,17 +38,7 @@ const PaginatonRender: React.FC<Repos> = ({ repos }) => {
 
       <Collection>
         {currentRepos?.map((repo) => (
-          <Project
-            id={repo.id}
-            key={repo.id}
-            name={repo.name}
-            image_url={repo.image_url}
-            description={repo.description}
-            html_url={repo.html_url}
-            pushed_at={repo.pushed_at}
-            homepage={repo.homepage}
-            topics={repo.topics}
-          ></Project>
+          <Project key={repo.id} repo={repo}></Project>
         ))}
       </Collection>
 

@@ -10,7 +10,7 @@ import Hero from "./view/Hero/Hero";
 
 import { GlobalStyles } from "./styles/global";
 
-function App(): React.ReactNode {
+const App = () => {
   const [theme, toggleTheme] = useDarkMode();
 
   return (
@@ -23,6 +23,6 @@ function App(): React.ReactNode {
       <GlobalStyles></GlobalStyles>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

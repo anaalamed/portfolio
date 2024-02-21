@@ -26,20 +26,11 @@ const InfiniteScrollRender = ({ repos }) => {
       next={fetchMoreData}
       hasMore={hasMore}
       loader={<p>Loading...</p>}
-      endMessage={<p >Yay! You have seen it all ;)</p>}
+      endMessage={<p >Yay! You have seen it all</p>}
     >
-      {currentRepos?.map(repo =>
-      (<Project id={repo.id}
-        key={repo.id}
-        name={repo.name}
-        image_url={repo.image_url}
-        description={repo.description}
-        html_url={repo.html_url}
-        pushed_at={repo.pushed_at}
-        homepage={repo.homepage}
-        topics={repo.topics}>
-      </Project>)
-      )}
+      {currentRepos?.map(repo => (
+        <Project key={repo.id} repo={repo} ></Project>
+      ))}
     </Box>
   );
 };

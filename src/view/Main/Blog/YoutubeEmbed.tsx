@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { devices } from "../../../styles/responsive";
 
-const YoutubeEmbed: React.FC = ({ link }) => {
+const YoutubeEmbed: React.FC<{ link: string }> = ({ link }) => {
   return (
     <Box>
       <Video

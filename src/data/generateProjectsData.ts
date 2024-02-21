@@ -1,5 +1,19 @@
 import projectsAdditionalData from "./projectsAdds.json";
 
+export interface Repo {
+  id: number;
+  name: string;
+  image_url: string;
+  description: string;
+  html_url: string;
+  pushed_at: string;
+  homepage: string;
+  topics: [];
+  order: number;
+}
+
+export type Repos = Repo[];
+
 const githubReposLink =
   "https://api.github.com/users/anaalamed/repos?per_page=100";
 
@@ -8,7 +22,7 @@ const getReposFromGithub = async () => {
   return await res.json();
 };
 
-const mergeReposData = (repos) => {
+const mergeReposData = (repos: Repos) => {
   return repos.map((repo) => {
     const additionalData = projectsAdditionalData.find(
       (project) => repo.id === project.id
@@ -22,7 +36,7 @@ export const getSortedRepos = async () => {
   const updatedRepos = mergeReposData(reposFromGithub);
 
   return updatedRepos
-    .filter((repo) => repo.order != null)
+    .filter((repo: Repo) => repo.order != null)
     .sort(function (a, b) {
       var project1 = a.order || 100;
       var project2 = b.order || 100;

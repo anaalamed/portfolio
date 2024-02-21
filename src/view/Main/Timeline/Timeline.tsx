@@ -17,10 +17,10 @@ const Timelene: React.FC = () => {
           <Title>Timeline</Title>
 
           <VerticalTimeline>
-            {data.map((timelineElement) => (
+            {data.map((timelineElementData) => (
               <TimelineElement
-                key={timelineElement.id}
-                details={timelineElement}
+                key={timelineElementData.id}
+                data={timelineElementData}
               ></TimelineElement>
             ))}
           </VerticalTimeline>

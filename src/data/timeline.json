@@ -37,6 +37,7 @@
     "id": 4,
     "title": "Full Stack Development",
     "company": "Netcraft Academy",
+    "description": [],
     "date": "2020 - 2021",
     "icon": "education",
     "topics": ["js", "react", "mongodb", "nodejs", "html", "css"]
