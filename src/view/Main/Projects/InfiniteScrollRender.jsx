@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import InfiniteScroll from 'react-infinite-scroll-component';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import styled from "styled-components";
 import Project from './ProjectCard';
 

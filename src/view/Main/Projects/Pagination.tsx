@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Pagination } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 import Project from "./ProjectCard";
 import { devices } from "../../../styles/responsive";
