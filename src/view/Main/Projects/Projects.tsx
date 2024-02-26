@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import { Title, SectionBox } from "../../../styles/global";
@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
       <Title>Projects</Title>
 
       {repos.length > 0 && windowSize[0] <= 812 ? (
-        <InfiniteScrollRender repos={[...repos]}></InfiniteScrollRender>
+        <InfiniteScrollRender repos={repos}></InfiniteScrollRender>
       ) : (
         <PaginatonRender repos={repos}></PaginatonRender>
       )}

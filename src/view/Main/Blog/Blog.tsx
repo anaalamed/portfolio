@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import styled from "styled-components";
 
 import { Title, SectionBox } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
@@ -8,19 +8,15 @@ import Post from "./Post";
 
 const About: React.FC = () => {
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Box id="blog">
-          <Title>Blog</Title>
+    <Box id="blog">
+      <Title>Blog</Title>
 
-          <Content className="posts-wrapper">
-            {data.map((post) => (
-              <Post key={post.title} post={post}></Post>
-            ))}
-          </Content>
-        </Box>
-      )}
-    </ThemeConsumer>
+      <Content className="posts-wrapper">
+        {data.map((post) => (
+          <Post key={post.title} post={post}></Post>
+        ))}
+      </Content>
+    </Box>
   );
 };
 export default About;

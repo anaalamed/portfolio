@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import styled from "styled-components";
 
 import { devices } from "../../../styles/responsive";
 import YoutubeEmbed from "./YoutubeEmbed";
@@ -15,24 +15,20 @@ interface PostData {
 
 const Post: React.FC<{ post: PostData }> = ({ post }) => {
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Box className="post">
-          <Title>{post.title}</Title>
+    <Box className="post">
+      <Title>{post.title}</Title>
 
-          <Content>
-            <YoutubeEmbed link={post.link}></YoutubeEmbed>
-            <div>
-              <Date>{post.date}</Date>
-              <Description>{post.description}</Description>
-              <Button>
-                <a href={post.github}>More...</a>
-              </Button>
-            </div>
-          </Content>
-        </Box>
-      )}
-    </ThemeConsumer>
+      <Content>
+        <YoutubeEmbed link={post.link}></YoutubeEmbed>
+        <div>
+          <Date>{post.date}</Date>
+          <Description>{post.description}</Description>
+          <Button>
+            <a href={post.github}>More...</a>
+          </Button>
+        </div>
+      </Content>
+    </Box>
   );
 };
 export default Post;

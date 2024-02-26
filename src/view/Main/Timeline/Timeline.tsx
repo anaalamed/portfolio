@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import styled from "styled-components";
 
 import { Title, SectionBox } from "../../../styles/global";
 
@@ -11,22 +11,18 @@ import data from "../../../data/timeline.json";
 
 const Timelene: React.FC = () => {
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Box id="timeline">
-          <Title>Timeline</Title>
+    <Box id="timeline">
+      <Title>Timeline</Title>
 
-          <VerticalTimeline>
-            {data.map((timelineElementData) => (
-              <TimelineElement
-                key={timelineElementData.id}
-                data={timelineElementData}
-              ></TimelineElement>
-            ))}
-          </VerticalTimeline>
-        </Box>
-      )}
-    </ThemeConsumer>
+      <VerticalTimeline>
+        {data.map((timelineElementData) => (
+          <TimelineElement
+            key={timelineElementData.id}
+            data={timelineElementData}
+          ></TimelineElement>
+        ))}
+      </VerticalTimeline>
+    </Box>
   );
 };
 export default Timelene;
