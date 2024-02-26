@@ -77,6 +77,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  grid-gap: 10px;
 
   p {
     font-size: 1.5rem;
@@ -95,15 +96,14 @@ const Content = styled.div`
 `;
 
 const Image = styled.div`
-  margin-left: 1rem;
   overflow: hidden;
   transition: 1s ease;
-  min-width: 300px;
+  width: 300px;
   height: 300px;
-  position: relative;
   border-radius: 50%;
   border-color: ${(props) => props.theme.topBar};
   border: 3px solid;
+  flex-shrink: 0;
 
   img {
     width: 100%;
@@ -115,10 +115,6 @@ const Image = styled.div`
       transform: scale(1.2);
       transition: 1s;
     }
-  }
-  @media ${devices.mobile} {
-    min-width: 200px;
-    height: 200px;
   }
 `;
 
