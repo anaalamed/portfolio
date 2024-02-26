@@ -18,8 +18,12 @@ const githubReposLink =
   "https://api.github.com/users/anaalamed/repos?per_page=100";
 
 const getReposFromGithub = async () => {
-  const res = await fetch(githubReposLink);
-  return await res.json();
+  try {
+    const res = await fetch(githubReposLink);
+    return await res.json();
+  } catch (e) {
+    console.log("Error occured during fetching projects data from Github: ", e);
+  }
 };
 
 const mergeReposData = (repos: Repos) => {
