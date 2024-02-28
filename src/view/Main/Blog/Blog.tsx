@@ -24,6 +24,10 @@ export default About;
 const Box = styled(SectionBox)`
   display: flex;
   flex-direction: column;
+
+  @media ${devices.largeDesktop} {
+    max-width: 1700px;
+  }
 `;
 
 const Content = styled.div`
