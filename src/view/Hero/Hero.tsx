@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-import Icons from "../Icons";
+import ContactIcons from "../GeneralComponents/ContactIcons/ContactIcons";
 import { devices } from "../../styles/responsive";
 import { headerHeght } from "../../styles/global";
 
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           </Image>
         </Skica>
 
-        <Icons></Icons>
+        <ContactIcons></ContactIcons>
       </Container>
     </Box>
   );
