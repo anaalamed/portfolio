@@ -9,7 +9,6 @@ interface PostData {
   description: string;
   date: string;
   link: string;
-  order: number;
   github: string;
 }
 

@@ -1,10 +1,16 @@
 [
   {
+    "title": "Blog App",
+    "description": "Blog application for a small community of writers. Users can create accounts, write and publish blog posts, and leave comments on other user’s posts. ",
+    "date": "2.2024",
+    "link": "https://www.youtube.com/embed/Y_CXIrKWsbs",
+    "github": "https://github.com/anaalamed/blog"
+  },
+  {
     "title": "Calendar App",
     "description": "My final project at Start@Google bootcamp. \nIt's mostly backend project using Java, Spring Boot, Hibernate and MySql, and Vanila JavaScript at frontend.   ",
     "date": "1.2023",
     "link": "https://www.youtube.com/embed/sg06_ziQ2FI",
-    "order": 1,
     "github": "https://github.com/anaalamed/calendar-server"
   },
   {
@@ -12,7 +18,6 @@
     "description": "My first mobile app using Expo, React Native and TypeScript at Frontend, and Firebase services such as Auth, Firestore, Storage, Hosting and Cloud Functions. ",
     "date": "11.2021",
     "link": "https://www.youtube.com/embed/5IBjLLmK5IA",
-    "order": 2,
     "github": "https://github.com/anaalamed/todo-mobile"
   }
 ]
