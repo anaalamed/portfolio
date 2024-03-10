@@ -7,6 +7,7 @@ import TopBar from "./view/TopBar/TopBar";
 import Main from "./view/Main/Main";
 import Contact from "./view/Footer/Footer";
 import Hero from "./view/Hero/Hero";
+import "antd/dist/reset.css";
 
 import { GlobalStyles } from "./styles/global";
 
