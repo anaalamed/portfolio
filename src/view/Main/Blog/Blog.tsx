@@ -5,17 +5,18 @@ import { Title, SectionBox } from "../../../styles/global";
 import { devices } from "../../../styles/responsive";
 import data from "../../../data/blog.json";
 import Post from "./Post";
+import { Flex } from "antd";
 
 const About: React.FC = () => {
   return (
     <Box id="blog">
       <Title>Blog</Title>
 
-      <Content className="posts-wrapper">
+      <Flex justify="center" align="center" gap={16} wrap="wrap">
         {data.map((post) => (
           <Post key={post.title} post={post}></Post>
         ))}
-      </Content>
+      </Flex>
     </Box>
   );
 };
@@ -27,16 +28,5 @@ const Box = styled(SectionBox)`
 
   @media ${devices.largeDesktop} {
     max-width: 1700px;
-  }
-`;
-
-const Content = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @media ${devices.tablet} {
-    flex-direction: column;
-    align-items: center;
   }
 `;

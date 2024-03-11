@@ -9,7 +9,6 @@ interface PostData {
   description: string;
   date: string;
   link: string;
-  order: number;
   github: string;
 }
 
@@ -18,8 +17,9 @@ const Post: React.FC<{ post: PostData }> = ({ post }) => {
     <Box className="post">
       <Title>{post.title}</Title>
 
+      <YoutubeEmbed link={post.link}></YoutubeEmbed>
+
       <Content>
-        <YoutubeEmbed link={post.link}></YoutubeEmbed>
         <div>
           <Date>{post.date}</Date>
           <Description>{post.description}</Description>
@@ -37,13 +37,14 @@ const Box = styled.div`
   background: ${(props) => props.theme.topBar};
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  margin-bottom: 5rem;
+  justify-content: center;
+  align-items: center;
   padding: 2rem 1rem 0;
-  max-width: 47%;
+  max-width: 30%;
   border-radius: 1rem;
   border-bottom: 5px solid ${(props) => props.theme.topBar};
   overflow: hidden;
+  height: 600px;
 
   &:hover {
     border-bottom: 5px solid white;
@@ -52,6 +53,7 @@ const Box = styled.div`
   @media ${devices.tablet} {
     width: 80%;
     max-width: 80%;
+    max-height: 450px;
   }
 `;
 

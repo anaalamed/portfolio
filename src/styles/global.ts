@@ -59,7 +59,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   }
 
   /*  -------------------------- pagination ------------------------------  */
-  .ant-pagination li {
+  body #projects .ant-pagination li {
     background: ${(props) => props.theme.topBar};
     border-radius: 50%;
     margin: 3rem 0.5rem ;
@@ -74,18 +74,19 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     }
   }
 
-  .ant-pagination-item a {
+  body #projects .ant-pagination-item a {
     color: white;
   }
 
-  .ant-pagination-item-active a {
+  body #projects .ant-pagination-item-active a {
     color: ${(props) => props.theme.topBar};
     background: white;
     border-radius: 50%;
     border-color: ${(props) => props.theme.button};
   }
 
-  .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+   body #projects .ant-pagination-prev .ant-pagination-item-link,
+   body #projects .ant-pagination-next .ant-pagination-item-link {
     background: ${(props) => props.theme.topBar};  
     color: white;
     border-radius: 50%;

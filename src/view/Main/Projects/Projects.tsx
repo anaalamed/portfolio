@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import "antd/dist/antd.min.css";
 
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import { Title, SectionBox } from "../../../styles/global";

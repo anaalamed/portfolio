@@ -7,8 +7,8 @@ const YoutubeEmbed: React.FC<{ link: string }> = ({ link }) => {
     <Box>
       <Video
         src={link}
-        width="400"
-        height="300"
+        width="350"
+        height="250"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -23,8 +23,8 @@ const Box = styled.div`
   border-radius: 1rem;
   align-self: center;
 
-  @media ${devices.mobile} {
-    padding: 1rem;
+  @media ${devices.tablet} {
+    padding: 0;
   }
 `;
 
