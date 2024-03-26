@@ -1,72 +1,67 @@
 import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
 import dayjs from "dayjs";
-import ReactTooltip from "react-tooltip";
 import { GrGithub } from "react-icons/gr";
 import { CgWebsite } from "react-icons/cg";
+import { FaYoutube } from "react-icons/fa";
 import { devices } from "../../../styles/responsive";
 import { generateImgTagByIconName } from "../../../data/projectIcons";
 import { Repo } from "../../../data/generateProjectsData";
+import IconButton, { IconData } from "./IconButton";
+import styled from "styled-components";
 
 const Project: React.FC<{ repo: Repo }> = ({ repo }) => {
   const defaultImgUrl =
     "https://firebasestorage.googleapis.com/v0/b/ana-levit-portfolio-ts.appspot.com/o/projectDefaultImg.jpeg?alt=media&token=638845c2-f6e2-49b4-b69b-828a80a3f32a";
 
+  let websiteYoutubeButton: IconData | undefined;
+  if (repo.homepage) {
+    if (repo.homepage.includes("youtube")) {
+      websiteYoutubeButton = {
+        link: repo.homepage,
+        name: "Youtube",
+        iconElement: FaYoutube,
+      };
+    } else {
+      websiteYoutubeButton = {
+        link: repo.homepage,
+        name: "WebSite",
+        iconElement: CgWebsite,
+      };
+    }
+  }
+
   return (
-    <ThemeConsumer>
-      {(theme) => (
-        <Box id={"repo_".concat(String(repo.id))} className="projectCard">
-          <h1>
-            {(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(
-              /[- _]/g,
-              " "
-            )}
-          </h1>
-          <Image>
-            <img src={repo.image_url || defaultImgUrl} alt="projectImg" />
-          </Image>
+    <Box id={"repo_".concat(String(repo.id))} className="projectCard">
+      <h1>
+        {(repo.name.charAt(0).toUpperCase() + repo.name.slice(1)).replace(
+          /[- _]/g,
+          " "
+        )}
+      </h1>
+      <Image>
+        <img src={repo.image_url || defaultImgUrl} alt="projectImg" />
+      </Image>
 
-          <p className="description">{repo.description}</p>
+      <p className="description">{repo.description}</p>
 
-          <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
+      <p>{repo.topics?.map((topic) => generateImgTagByIconName(topic))}</p>
 
-          <p>last updated: {dayjs(repo.pushed_at).format("DD/MM/YY")}</p>
-          <Buttons>
-            <a href={repo.html_url} target="_blank" rel="noreferrer">
-              <Button data-tip="true" data-for="github">
-                <GrGithub />
-                <ReactTooltip
-                  id="github"
-                  place="top"
-                  effect="solid"
-                  backgroundColor={theme.body}
-                  textColor={"white"}
-                >
-                  GitHub
-                </ReactTooltip>
-              </Button>
-            </a>
+      <p>last updated: {dayjs(repo.pushed_at).format("DD/MM/YY")}</p>
 
-            {repo.homepage ? (
-              <a href={repo.homepage} target="_blank" rel="noreferrer">
-                <Button data-tip data-for="website">
-                  <CgWebsite />
-                  <ReactTooltip
-                    id="website"
-                    place="top"
-                    effect="solid"
-                    backgroundColor={theme.body}
-                    textColor={"white"}
-                  >
-                    Website
-                  </ReactTooltip>
-                </Button>
-              </a>
-            ) : null}
-          </Buttons>
-        </Box>
-      )}
-    </ThemeConsumer>
+      <Buttons>
+        <IconButton
+          iconData={{
+            link: repo.html_url,
+            name: "GitHub",
+            iconElement: GrGithub,
+          }}
+        />
+
+        {websiteYoutubeButton !== undefined ? (
+          <IconButton iconData={websiteYoutubeButton} />
+        ) : null}
+      </Buttons>
+    </Box>
   );
 };
 export default Project;
@@ -156,21 +151,6 @@ const Buttons = styled.div`
   }
 
   @media ${devices.mobile} {
-    a {
-      font-size: 1rem;
-    }
-  }
-`;
-
-const Button = styled.button`
-  background: ${(props) => props.theme.button};
-  padding: 0.3rem 3rem 0 3rem;
-  border-radius: 1rem;
-  cursor: pointer;
-
-  @media ${devices.mobile} {
-    padding: 0.2rem 2rem 0 2rem;
-
     a {
       font-size: 1rem;
     }

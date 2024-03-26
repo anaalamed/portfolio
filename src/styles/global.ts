@@ -53,9 +53,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   }
 
   /*  -------------------------- tooltip ------------------------------  */
-
-  .__react_component_tooltip {
-    background: ${(props) => props.theme.body};
+  body .__react_component_tooltip.place-top.show::before {
+    opacity: 0;
   }
 
   /*  -------------------------- pagination ------------------------------  */
